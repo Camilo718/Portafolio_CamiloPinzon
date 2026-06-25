@@ -1,0 +1,48 @@
+/* ─────────────────────────────────────────────
+   global.css
+   Reset + variables de diseño globales
+───────────────────────────────────────────── */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-bg:          #EEF5FB;
+  --color-bg-alt:      #E6F0F8;
+  --color-bg-card:     #ffffff;
+  --color-bg-project:  #D8E8F4;
+  --color-navy:        #1B2A5C;
+  --color-navy-light:  #2A3F80;
+  --color-accent:      #6688CC;
+  --color-text-primary:#1B2A5C;
+  --color-text-muted:  #5570A0;
+  --color-text-light:  #6A7898;
+  --color-text-faint:  #8899BB;
+  --color-tag-bg:      #E8EEF8;
+  --color-tag-text:    #2A3F80;
+  --border-card:       0.5px solid rgba(30,60,120,0.10);
+  --radius-card:       14px;
+  --radius-btn:        8px;
+  --font-sans:         system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-serif:        Georgia, serif;
+  --font-mono:         "Courier New", monospace;
+  --transition-fast:   0.15s ease;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--color-bg);
+  color: var(--color-text-primary);
+  -webkit-font-smoothing: antialiased;
+}
+
+ul { list-style: none; }
+a  { text-decoration: none; }
+button { cursor: pointer; }
