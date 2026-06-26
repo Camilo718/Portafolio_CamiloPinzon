@@ -1,4 +1,3 @@
-// src/components/Navbar.jsx
 import { PERSONAL, NAV_LINKS } from "../data/portfolioData";
 
 export default function Navbar({ active, onNav }) {

@@ -5,7 +5,7 @@
 // ─────────────────────────────────────────────
 
 export const PERSONAL = {
-  name: "Your Full Name",
+  name: "Camilo Andres Pinzon",
   alias: "your_alias",
   bio: "A passionate designer who crafts beautiful, user-centered digital experiences that solve real problems and create lasting impact.",
   ctaLabel: "⭐ View My Work",
@@ -14,17 +14,16 @@ export const PERSONAL = {
 export const NAV_LINKS = ["Home", "Education", "Projects", "Contact Me"];
 
 export const SOCIALS = [
-  { label: "GitHub",   icon: "⌨️", href: "#" },
-  { label: "LinkedIn", icon: "💼", href: "#" },
-  { label: "Twitter",  icon: "🐦", href: "#" },
-  { label: "Dribbble", icon: "🏀", href: "#" },
-  { label: "Email",    icon: "✉️", href: "#" },
+  { label: "GitHub",   icon: "⌨️", href: "https://github.com/Camilo718" },
+  { label: "LinkedIn", icon: "💼", href: "https://www.linkedin.com/in/camilo-andres-pinzon-melendrez-27a7b3319/" },
+  { label: "Email",    icon: "✉️", href: "mailto:camilopinzon275@gmail.com" },
 ];
 
 export const SKILLS = [
   {
     icon: "🎨",
     title: "UI/UX Design",
+    image: "../../public/images/develop.png",
     tags: ["Figma", "Adobe XD", "Illustrator", "Sketch"],
     items: [
       "Designing highly attractive interfaces for mobile and web apps",
@@ -35,6 +34,7 @@ export const SKILLS = [
   {
     icon: "🔬",
     title: "Prototyping & Research",
+    image: "../../public/images/graficas.png",
     tags: ["Wireframing", "User Testing", "Prototypes"],
     items: [
       "Building interactive prototypes for stakeholder validation",
