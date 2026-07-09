@@ -1,123 +1,151 @@
-// ─────────────────────────────────────────────
-//  portfolioData.js
-//  Edita este archivo para actualizar tu info
-//  sin tocar ningún componente.
-// ─────────────────────────────────────────────
+import { FaChartLine, FaPalette, FaBox, FaShoppingCart, FaGlobe, FaMobileAlt, FaPython, FaPaintBrush, FaChartBar, FaClipboardList } from "react-icons/fa";
 
 export const PERSONAL = {
-  name: "Camilo Andres Pinzon",
-  alias: "your_alias",
-  bio: "A passionate designer who crafts beautiful, user-centered digital experiences that solve real problems and create lasting impact.",
-  ctaLabel: "⭐ View My Work",
+  name:     "Camilo Andrés Pinzón",
+  alias:    "camilo_dev",
+  bio:      "Soy una persona organizada y responsable, con habilidades en Design Thinking, programación Frontend y análisis de datos. Me destaco por mi integridad, trabajo en equipo y disposición para crear soluciones innovadoras.",
+  ctaLabel: "Ver mis proyectos",
+  email:    "camiloandrespinzonmelendrez@gmail.com",
+  phone:    "315-8094-952",
+  location: "Carrera 87#131-06",
+  cvFile:   "/cv.pdf",
 };
 
-export const NAV_LINKS = ["Home", "Education", "Projects", "Contact Me"];
+export const NAV_LINKS = ["Home", "Education", "Experience", "Projects", "Contact Me"];
+import { SiGithub, SiX } from "react-icons/si";
+import { FaLinkedin } from "react-icons/fa";
+import { FiMail } from "react-icons/fi"; // Feather: limpio y ligero
 
 export const SOCIALS = [
-  { label: "GitHub",   icon: "⌨️", href: "https://github.com/Camilo718" },
-  { label: "LinkedIn", icon: "💼", href: "https://www.linkedin.com/in/camilo-andres-pinzon-melendrez-27a7b3319/" },
-  { label: "Email",    icon: "✉️", href: "mailto:camilopinzon275@gmail.com" },
+ { label: "GitHub",    icon: SiGithub,   href: "https://github.com/Camilo718" },
+  { label: "LinkedIn", icon: FaLinkedin, href: "https://www.linkedin.com/in/camilo-andres-pinzon-melendrez-27a7b3319/" },
+  { label: "X",        icon: SiX,        href: "https://x.com/tu-usuario" },
+  { label: "Email",    icon: FiMail,     href: `mailto:camiloandrespinzonmelendrez@gmail.com` },
+];
+
+export const STATS = [
+  { value: 3,  suffix: "+", label: "Años estudiando" },
+  { value: 10, suffix: "+", label: "Proyectos" },
+  { value: 5,  suffix: "",  label: "Tecnologías" },
+  { value: 2,  suffix: "",  label: "Certificaciones" },
 ];
 
 export const SKILLS = [
   {
-    icon: "🎨",
-    title: "UI/UX Design",
-    image: "../../public/images/develop.png",
-    tags: ["Figma", "Adobe XD", "Illustrator", "Sketch"],
+    icon: FaChartLine,
+    title: "Frontend Development",
+    image: "/images/Develop.png",
+    tags: ["React", "JavaScript", "TypeScript", "HTML/CSS"],
     items: [
-      "Designing highly attractive interfaces for mobile and web apps",
-      "Customizing and building logos from scratch",
-      "Creating application flows to optimize user experience",
+      "Desarrollo de interfaces responsivas con React",
+      "Manejo de TypeScript y JavaScript moderno",
+      "Habilidades en diseño y maquetación Frontend",
     ],
   },
   {
-    icon: "🔬",
-    title: "Prototyping & Research",
-    image: "../../public/images/graficas.png",
-    tags: ["Wireframing", "User Testing", "Prototypes"],
+    icon: FaPalette,
+    title: "Diseño & Datos",
+    image: "/images/Graficas.png",
+    tags: ["Python", "Diseño UI", "Design Thinking", "Análisis de datos"],
     items: [
-      "Building interactive prototypes for stakeholder validation",
-      "Conducting usability tests and synthesizing findings",
-      "Creating design systems and component libraries",
+      "Pensamiento de diseño para soluciones innovadoras",
+      "Análisis de datos con Python",
+      "Gestión del tiempo y trabajo colaborativo en equipo",
     ],
   },
 ];
 
 export const EDUCATION = [
   {
-    badge: "Degree",
-    title: "Bachelor in Graphic & Digital Design",
-    institution: "Universidad Placeholder",
-    year: "2018 – 2022",
+    badge: "Técnico",
+    title: "Técnico en Programación de Software",
+    institution: "SENA",
+    year: "En curso",
   },
   {
-    badge: "Certification",
-    title: "Google UX Design Professional Certificate",
-    institution: "Coursera / Google",
-    year: "2022",
+    badge: "Formación",
+    title: "Formación P-Tech",
+    institution: "IBM – SkillsBuild",
+    year: "Completado",
   },
   {
-    badge: "Certification",
-    title: "Figma Advanced Components & Auto Layout",
-    institution: "Figma Community / Platzi",
-    year: "2023",
+    badge: "Bachiller",
+    title: "Bachiller Académico",
+    institution: "Colegio Gerardo Paredes",
+    year: "Graduado",
   },
   {
-    badge: "Certification",
-    title: "Adobe XD Masterclass",
-    institution: "Udemy",
-    year: "2021",
+    badge: "Habilidad",
+    title: "Design Thinking & Mindfulness",
+    institution: "Autodidacta",
+    year: "Continuo",
+  },
+];
+
+export const EXPERIENCE = [
+  {
+    role: "Auxiliar de Bodega",
+    company: "Grupo Éxito / Coordinadora",
+    period: "Experiencia previa",
+    location: "Colombia",
+    description:
+      "Operador logístico de almacén de cadena, manipulación higiénica de alimentos y trabajo en empaquetado. Desarrollé habilidades de organización, responsabilidad y trabajo en equipo.",
+    logo: FaBox,
+  },
+  {
+    role: "Ventas & Comercio",
+    company: "Experiencia en comercio",
+    period: "Experiencia previa",
+    location: "Colombia",
+    description:
+      "Conocimiento en ventas, comunicación efectiva, gestión en inventario y logística. Capacidad de relacionamiento con clientes y resolución de problemas.",
+    logo: FaShoppingCart,
   },
 ];
 
 export const PROJECTS = [
   {
-    icon: "📊",
-    title: "Dashboard Redesign",
-    description:
-      "Complete visual overhaul of a SaaS analytics dashboard, improving task completion by 40%.",
-    tags: ["Figma", "UI/UX", "SaaS"],
+    icon: FaGlobe,
+    title: "Portafolio Personal",
+    description: "Portafolio web construido con React + Vite. Incluye dark mode, animaciones y secciones dinámicas.",
+    tags: ["React", "Vite", "CSS"],
     link: "#",
   },
   {
-    icon: "📱",
-    title: "Mobile Banking App",
-    description:
-      "End-to-end design for a fintech app targeting young adults, from research to high-fidelity prototype.",
-    tags: ["Mobile", "Fintech", "Research"],
+    icon: FaMobileAlt,
+    title: "App Frontend React",
+    description: "Aplicación web responsiva desarrollada con React y buenas prácticas de componentes.",
+    tags: ["React", "JavaScript", "UI"],
     link: "#",
   },
   {
-    icon: "🧩",
-    title: "Design System",
-    description:
-      "Built a scalable component library and design token system for a mid-size product team.",
-    tags: ["Design System", "Tokens", "Figma"],
+    icon: FaPython,
+    title: "Análisis de Datos Python",
+    description: "Proyecto de análisis y visualización de datos usando Python.",
+    tags: ["Python", "Datos", "Análisis"],
     link: "#",
   },
   {
-    icon: "🛒",
-    title: "E-Commerce UX",
-    description:
-      "Redesigned checkout flow reducing cart abandonment by 25%.",
-    tags: ["E-Commerce", "UX", "A/B Test"],
+    icon: FaPaintBrush,
+    title: "Diseño UI/UX",
+    description: "Propuesta de diseño de interfaz aplicando principios de Design Thinking y UX.",
+    tags: ["Design Thinking", "UI", "UX"],
     link: "#",
   },
   {
-    icon: "🎯",
-    title: "Brand Identity Kit",
-    description:
-      "Logo, color palette, typography and usage guidelines for a sustainability startup.",
-    tags: ["Branding", "Illustrator", "Identity"],
+    icon: FaClipboardList,
+    title: "Gestión de Inventario",
+    description: "Sistema básico de gestión de inventario desarrollado durante formación técnica.",
+    tags: ["JavaScript", "Lógica", "SENA"],
     link: "#",
   },
   {
-    icon: "♿",
-    title: "Accessibility Audit",
-    description:
-      "Full WCAG 2.1 audit and redesign recommendations for a government web portal.",
-    tags: ["A11y", "WCAG", "Research"],
+    icon: FaChartBar,
+    title: "Dashboard Analítico",
+    description: "Dashboard de visualización de métricas con componentes React reutilizables.",
+    tags: ["React", "TypeScript", "Charts"],
     link: "#",
   },
 ];
+
+export const FILTER_TAGS = ["Todos", "React", "Python", "UI/UX", "JavaScript", "TypeScript"];
