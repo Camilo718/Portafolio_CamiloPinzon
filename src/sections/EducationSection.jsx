@@ -4,23 +4,36 @@ import FadeIn from "../components/FadeIn";
 
 export default function EducationSection() {
   return (
-    <section id="education" style={{ padding: "4rem 2.5rem", background: "var(--color-bg-alt)" }}>
+    <section id="education" className="px-10 py-16" style={{ background: "var(--color-bg-alt)" }}>
       <SectionTitle>Educación</SectionTitle>
       <SectionDivider />
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 2fr", alignItems: "center", gap: "3rem" }}>
+
+      <div className="grid grid-cols-[1fr_2fr] items-center gap-12">
         <FadeIn direction="left">
-          <div style={{ display: "flex", justifyContent: "center" }}>
-            <img src="../../public/Images/educaciones.png" alt="Education" style={{ maxWidth: 280, width: "100%", objectFit: "contain" }} />
+          <div className="flex justify-center">
+            <img src="/images/educaciones.png" alt="Education" className="max-w-[280px] w-full object-contain" />
           </div>
         </FadeIn>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.25rem" }}>
+
+        <div className="grid grid-cols-2 gap-4">
           {EDUCATION.map((edu, i) => (
             <FadeIn key={edu.title} delay={i * 80} direction="up">
-              <div style={{ background: "var(--color-bg-card)", borderRadius: "var(--radius-card)", border: "var(--border-card)", padding: "1.4rem 1.6rem", display: "flex", flexDirection: "column", gap: 6, height: "100%", boxShadow: "var(--shadow-card)" }}>
-                <span style={{ display: "inline-block", fontSize: 11, fontWeight: 500, background: "var(--color-tag-bg)", color: "var(--color-tag-text)", borderRadius: 6, padding: "3px 9px", width: "fit-content" }}>{edu.badge}</span>
-                <h4 style={{ fontSize: 14, fontWeight: 500, color: "var(--color-navy)", lineHeight: 1.4 }}>{edu.title}</h4>
-                <p style={{ fontSize: 13, color: "var(--color-text-muted)" }}>{edu.institution}</p>
-                <p style={{ fontSize: 12, color: "var(--color-text-faint)" }}>{edu.year}</p>
+              <div
+                className="rounded-2xl border p-5 flex flex-col gap-1.5 h-full shadow-sm
+                           transition-transform duration-200 hover:-translate-y-1"
+                style={{ background: "var(--color-bg-card)", borderColor: "var(--color-tag-bg)" }}
+              >
+                <span
+                  className="text-[11px] font-medium px-2.5 py-0.5 rounded-md w-fit"
+                  style={{ background: "var(--color-tag-bg)", color: "var(--color-tag-text)" }}
+                >
+                  {edu.badge}
+                </span>
+                <h4 className="text-sm font-medium leading-snug" style={{ color: "var(--color-navy)" }}>
+                  {edu.title}
+                </h4>
+                <p className="text-xs" style={{ color: "var(--color-muted)" }}>{edu.institution}</p>
+                <p className="text-xs" style={{ color: "var(--color-faint)" }}>{edu.year}</p>
               </div>
             </FadeIn>
           ))}

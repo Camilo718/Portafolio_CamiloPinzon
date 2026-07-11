@@ -1,36 +1,43 @@
-import { FaBolt } from "react-icons/fa";
 import { SectionTitle, SectionDivider } from "../components/SectionTitle";
 import { SKILLS } from "../data/portfolioData";
 import FadeIn from "../components/FadeIn";
 
 export default function WhatIDoSection() {
   return (
-    <section id="whatido" style={{ padding: "4rem 2.5rem", background: "var(--color-bg)" }}>
+    <section id="whatido" className="px-10 py-16" style={{ background: "var(--color-bg)" }}>
       <SectionTitle>Lo que hago</SectionTitle>
       <SectionDivider />
-      <div style={{ display: "flex", flexDirection: "column", gap: "4rem" }}>
+
+      <div className="flex flex-col gap-20">
         {SKILLS.map((skill, i) => (
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", alignItems: "center", gap: "3rem" }}>
+          <div key={skill.title} className="grid grid-cols-2 items-center gap-12">
             <FadeIn direction={i % 2 === 0 ? "left" : "right"}>
-              <div style={{ display: "flex", justifyContent: "center", order: i % 2 === 0 ? 0 : 1 }}>
-                <img src="../../public/Images/develop.png" style={{ maxWidth: 340, width: "100%", objectFit: "contain" }} />
+              <div className={`flex justify-center ${i % 2 !== 0 ? "order-last" : ""}`}>
+                <img src={skill.image} alt={skill.title} className="max-w-[340px] w-full object-contain" />
               </div>
             </FadeIn>
+
             <FadeIn direction={i % 2 === 0 ? "right" : "left"} delay={100}>
-              <div style={{ order: i % 2 === 0 ? 1 : 0 }}>
-                <h3 style={{ fontSize: 24, fontWeight: 500, color: "var(--color-navy)", marginBottom: "1rem", display: "flex", alignItems: "center", gap: 10 }}>
-                  {skill.icon && <skill.icon style={{ fontSize: 22, color: "var(--color-accent)" }} />}
-                  <span>{skill.title}</span>
+              <div className={i % 2 !== 0 ? "order-first" : ""}>
+                <h3 className="text-2xl font-medium mb-4" style={{ color: "var(--color-navy)" }}>
+                  {skill.icon} {skill.title}
                 </h3>
-                <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: "1.25rem" }}>
+                <div className="flex flex-wrap gap-2 mb-5">
                   {skill.tags.map((tag) => (
-                    <span key={tag} style={{ background: "var(--color-tag-bg)", color: "var(--color-tag-text)", fontSize: 12, fontWeight: 500, padding: "4px 12px", borderRadius: 6 }}>{tag}</span>
+                    <span
+                      key={tag}
+                      className="text-xs font-medium px-3 py-1 rounded-md"
+                      style={{ background: "var(--color-tag-bg)", color: "var(--color-tag-text)" }}
+                    >
+                      {tag}
+                    </span>
                   ))}
                 </div>
-                <ul style={{ padding: 0, display: "flex", flexDirection: "column", gap: 8 }}>
+                <ul className="flex flex-col gap-2 p-0 list-none">
                   {skill.items.map((item) => (
-                    <li key={item} style={{ fontSize: 14, color: "var(--color-text-light)", lineHeight: 1.6, display: "flex", alignItems: "flex-start", gap: 8 }}>
-                      <span style={{ color: "#F5A623", marginTop: 2 }}><FaBolt /></span> {item}
+                    <li key={item} className="flex items-start gap-2 text-sm leading-relaxed"
+                      style={{ color: "var(--color-light)" }}>
+                      <span className="mt-0.5 text-yellow-500">⚡</span> {item}
                     </li>
                   ))}
                 </ul>

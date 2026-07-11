@@ -1,10 +1,13 @@
 export function SectionTitle({ children }) {
   return (
-    <h2 style={{ textAlign: "center", fontSize: 28, fontWeight: 500, color: "var(--color-navy)", marginBottom: "0.75rem" }}>
+    <h2 className="text-center text-3xl font-medium mb-3" style={{ color: "var(--color-navy)" }}>
       {children}
     </h2>
   );
 }
+
 export function SectionDivider() {
-  return <div style={{ width: 48, height: 3, background: "var(--color-navy)", borderRadius: 2, margin: "0 auto 2rem" }} />;
+  return (
+    <div className="w-12 h-[3px] rounded mx-auto mb-8" style={{ background: "var(--color-navy)" }} />
+  );
 }

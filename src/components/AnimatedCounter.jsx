@@ -1,4 +1,3 @@
-// src/components/AnimatedCounter.jsx
 import { useState, useEffect, useRef } from "react";
 
 export default function AnimatedCounter({ value, suffix = "" }) {

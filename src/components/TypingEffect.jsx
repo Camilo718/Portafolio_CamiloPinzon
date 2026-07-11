@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const WORDS = ["Frontend Developer", "UI Designer", "Python Developer", "Analista de Datos", "Creador de soluciones"];
+const WORDS = ["Frontend Developer", "React + Vite", "Python Developer", "Analista de Datos", "Creador de soluciones"];
 
 export default function TypingEffect() {
   const [wordIndex, setWordIndex] = useState(0);
@@ -10,17 +10,13 @@ export default function TypingEffect() {
   useEffect(() => {
     const current = WORDS[wordIndex];
     let timeout;
-
-    if (!deleting && displayed.length < current.length) {
+    if (!deleting && displayed.length < current.length)
       timeout = setTimeout(() => setDisplayed(current.slice(0, displayed.length + 1)), 80);
-    } else if (!deleting && displayed.length === current.length) {
+    else if (!deleting && displayed.length === current.length)
       timeout = setTimeout(() => setDeleting(true), 1800);
-    } else if (deleting && displayed.length > 0) {
+    else if (deleting && displayed.length > 0)
       timeout = setTimeout(() => setDisplayed(current.slice(0, displayed.length - 1)), 45);
-    } else if (deleting && displayed.length === 0) {
-      setDeleting(false);
-      setWordIndex((i) => (i + 1) % WORDS.length);
-    }
+    else { setDeleting(false); setWordIndex((i) => (i + 1) % WORDS.length); }
     return () => clearTimeout(timeout);
   }, [displayed, deleting, wordIndex]);
 
@@ -28,7 +24,6 @@ export default function TypingEffect() {
     <span style={{ color: "var(--color-accent)", fontWeight: 500 }}>
       {displayed}
       <span style={{ borderRight: "2px solid var(--color-accent)", marginLeft: 2, animation: "blink 1s step-end infinite" }} />
-      <style>{`@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }`}</style>
     </span>
   );
 }

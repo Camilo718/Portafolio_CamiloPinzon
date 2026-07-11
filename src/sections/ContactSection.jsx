@@ -1,50 +1,133 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
+import emailjs from "@emailjs/browser";
 import { SectionTitle, SectionDivider } from "../components/SectionTitle";
 import { SOCIALS } from "../data/portfolioData";
 import FadeIn from "../components/FadeIn";
 
+const SERVICE_ID  = "service_puhce1v";
+const TEMPLATE_ID = "template_ophvzwf";
+const PUBLIC_KEY  = "L8i7FIFgUbU5Oyz26";
+
 export default function ContactSection() {
-  const [sent, setSent] = useState(false);
+  const formRef = useRef(null);
+  const [status, setStatus] = useState("idle"); // idle | sending | sent | error
   const [form, setForm] = useState({ name: "", email: "", message: "" });
+
   const onChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
+  const handleSubmit = async () => {
+    if (!form.name || !form.email || !form.message) return;
+    setStatus("sending");
+    try {
+      await emailjs.send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        { name: form.name, email: form.email, message: form.message },
+        PUBLIC_KEY
+      );
+      setStatus("sent");
+      setForm({ name: "", email: "", message: "" });
+    } catch (err) {
+      console.error(err);
+      setStatus("error");
+    }
+  };
+
+  const inputStyle = {
+    background: "var(--color-bg)",
+    borderColor: "var(--color-tag-bg)",
+    color: "var(--color-navy)",
+  };
+
+  const inputClass =
+    "w-full px-4 py-2.5 rounded-xl text-sm border outline-none transition-colors duration-200";
+
   return (
-    <section id="contact" style={{ padding: "4rem 2.5rem", background: "var(--color-bg-alt)" }}>
+    <section id="contact" className="px-10 py-16" style={{ background: "var(--color-bg)" }}>
       <SectionTitle>Contáctame</SectionTitle>
       <SectionDivider />
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", alignItems: "center", gap: "3rem" }}>
+
+      <div className="grid grid-cols-2 items-center gap-12">
         <FadeIn direction="left">
-          <img src="../../public/Images/Messange.png" alt="Contact" style={{ maxWidth: 760, width: "100%", objectFit: "contain" }} />
+          <img
+            src="/images/Messange.png"
+            alt="Contact"
+            className="max-w-[360px] w-full object-contain mx-auto"
+          />
         </FadeIn>
+
         <FadeIn direction="right" delay={100}>
-          {sent ? (
-            <div style={{ background: "var(--color-bg-card)", borderRadius: "var(--radius-card)", border: "var(--border-card)", padding: "2.5rem", textAlign: "center" }}>
-              <div style={{ fontSize: 48, marginBottom: "1rem" }}>✅</div>
-              <h3 style={{ fontSize: 20, fontWeight: 500, color: "var(--color-navy)", marginBottom: "0.5rem" }}>¡Mensaje enviado!</h3>
-              <p style={{ fontSize: 14, color: "var(--color-text-light)" }}>Gracias por escribir, te responderé pronto.</p>
+          {status === "sent" ? (
+            <div
+              className="rounded-2xl border p-10 text-center shadow-sm"
+              style={{ background: "var(--color-bg-card)", borderColor: "var(--color-tag-bg)" }}
+            >
+              <div className="text-5xl mb-4">✅</div>
+              <h3 className="text-xl font-medium mb-2" style={{ color: "var(--color-navy)" }}>
+                ¡Mensaje enviado!
+              </h3>
+              <p className="text-sm mb-5" style={{ color: "var(--color-light)" }}>
+                Gracias por escribir, te responderé pronto.
+              </p>
+              <button
+                onClick={() => setStatus("idle")}
+                className="px-5 py-2 rounded-lg text-sm font-medium text-white border-none cursor-pointer"
+                style={{ background: "var(--color-navy)" }}
+              >
+                Enviar otro mensaje
+              </button>
             </div>
           ) : (
-            <div style={{ background: "var(--color-bg-card)", borderRadius: "var(--radius-card)", border: "var(--border-card)", padding: "2rem", display: "flex", flexDirection: "column", gap: "1rem", boxShadow: "var(--shadow-card)" }}>
-              {[{ name: "name", placeholder: "Tu nombre", type: "text" }, { name: "email", placeholder: "Tu email", type: "email" }].map((f) => (
-                <input key={f.name} type={f.type} name={f.name} placeholder={f.placeholder} value={form[f.name]} onChange={onChange}
-                  style={{ padding: "10px 14px", borderRadius: 8, fontSize: 14, border: "1px solid var(--color-border)", outline: "none", color: "var(--color-text-primary)", background: "var(--color-bg)" }} />
-              ))}
-              <textarea name="message" placeholder="Tu mensaje..." rows={4} value={form.message} onChange={onChange}
-                style={{ padding: "10px 14px", borderRadius: 8, fontSize: 14, border: "1px solid var(--color-border)", outline: "none", resize: "vertical", color: "var(--color-text-primary)", background: "var(--color-bg)" }} />
-              <button onClick={() => form.name && form.email && form.message && setSent(true)}
-                style={{ background: "var(--color-navy)", color: "#fff", border: "none", padding: "11px 0", borderRadius: "var(--radius-btn)", fontSize: 14, fontWeight: 500 }}
+            <div
+              className="rounded-2xl border p-7 flex flex-col gap-4 shadow-sm"
+              style={{ background: "var(--color-bg-card)", borderColor: "var(--color-tag-bg)" }}
+            >
+              <input
+                type="text" name="name" placeholder="Tu nombre"
+                value={form.name} onChange={onChange}
+                className={inputClass} style={inputStyle}
+              />
+              <input
+                type="email" name="email" placeholder="Tu email"
+                value={form.email} onChange={onChange}
+                className={inputClass} style={inputStyle}
+              />
+              <textarea
+                name="message" placeholder="Tu mensaje..." rows={4}
+                value={form.message} onChange={onChange}
+                className={inputClass + " resize-y"} style={inputStyle}
+              />
+
+              {status === "error" && (
+                <p className="text-sm text-red-500 text-center">
+                  ❌ Algo salió mal, intenta de nuevo.
+                </p>
+              )}
+
+              <button
+                onClick={handleSubmit}
+                disabled={status === "sending"}
+                className="w-full py-3 rounded-xl text-sm font-semibold text-white border-none cursor-pointer
+                           transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed"
+                style={{ background: "var(--color-navy)" }}
                 onMouseEnter={(e) => e.currentTarget.style.background = "var(--color-navy-light)"}
                 onMouseLeave={(e) => e.currentTarget.style.background = "var(--color-navy)"}
-              >Enviar mensaje ✉️</button>
-              <div style={{ display: "flex", justifyContent: "center", gap: 12 }}>
-                {SOCIALS.map((s) => {
-                  const Icon = s.icon;
-                  return (
-                    <a key={s.label} href={s.href} aria-label={s.label} style={{ width: 34, height: 34, borderRadius: "50%", background: "var(--color-bg-alt)", color: "var(--color-navy)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 15 }}>
-                      <Icon size={15} />
-                    </a>
-                  );
-                })}
+              >
+                {status === "sending" ? "Enviando... ⏳" : "Enviar mensaje ✉️"}
+              </button>
+
+              {/* Socials */}
+              <div className="flex justify-center gap-3 pt-1">
+                {SOCIALS.map((s) => (
+                  <a
+                    key={s.label} href={s.href} aria-label={s.label}
+                    className="w-9 h-9 rounded-full flex items-center justify-center text-sm
+                               transition-transform duration-200 hover:scale-110"
+                    style={{ background: "var(--color-bg-alt)", color: "var(--color-navy)" }}
+                  >
+                    {s.icon}
+                  </a>
+                ))}
               </div>
             </div>
           )}

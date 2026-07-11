@@ -1,95 +1,57 @@
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+@import "tailwindcss";
 
-:root {
-  /* Light mode */
-  --color-bg:           #EEF5FB;
-  --color-bg-alt:       #E6F0F8;
-  --color-bg-card:      #ffffff;
-  --color-bg-project:   #D8E8F4;
-  --color-navy:         #1B2A5C;
-  --color-navy-light:   #2A3F80;
-  --color-accent:       #6688CC;
-  --color-text-primary: #1B2A5C;
-  --color-text-muted:   #5570A0;
-  --color-text-light:   #6A7898;
-  --color-text-faint:   #8899BB;
-  --color-tag-bg:       #E8EEF8;
-  --color-tag-text:     #2A3F80;
-  --color-border:       rgba(30,60,120,0.10);
-  --color-progress:     #1B2A5C;
-  --shadow-card:        0 2px 16px rgba(30,60,120,0.08);
-  --border-card:        0.5px solid rgba(30,60,120,0.10);
-  --radius-card:        14px;
-  --radius-btn:         8px;
-  --font-sans:          system-ui, -apple-system, "Segoe UI", sans-serif;
-  --font-serif:         Georgia, serif;
-  --font-mono:          "Courier New", monospace;
-  --transition-fast:    0.18s ease;
+@theme {
+  /* Colors */
+  --color-navy:        #1B2A5C;
+  --color-navy-light:  #2A3F80;
+  --color-accent:      #6688CC;
+  --color-bg:          #EEF5FB;
+  --color-bg-alt:      #E6F0F8;
+  --color-bg-card:     #ffffff;
+  --color-bg-project:  #D8E8F4;
+  --color-tag-bg:      #E8EEF8;
+  --color-tag-text:    #2A3F80;
+  --color-muted:       #5570A0;
+  --color-light:       #6A7898;
+  --color-faint:       #8899BB;
 }
 
-[data-theme="dark"] {
-  --color-bg:           #0F172A;
-  --color-bg-alt:       #1E293B;
-  --color-bg-card:      #1E293B;
-  --color-bg-project:   #162032;
-  --color-navy:         #93B4FF;
-  --color-navy-light:   #BAD0FF;
-  --color-accent:       #6688CC;
-  --color-text-primary: #E2E8F0;
-  --color-text-muted:   #94A3B8;
-  --color-text-light:   #64748B;
-  --color-text-faint:   #475569;
-  --color-tag-bg:       #1E3A5F;
-  --color-tag-text:     #93B4FF;
-  --color-border:       rgba(147,180,255,0.12);
-  --color-progress:     #93B4FF;
-  --shadow-card:        0 2px 16px rgba(0,0,0,0.3);
-  --border-card:        0.5px solid rgba(147,180,255,0.12);
+/* Dark mode overrides */
+.dark {
+  --color-bg:          #0F172A;
+  --color-bg-alt:      #1E293B;
+  --color-bg-card:     #1E293B;
+  --color-bg-project:  #162032;
+  --color-navy:        #93B4FF;
+  --color-navy-light:  #BAD0FF;
+  --color-accent:      #6688CC;
+  --color-tag-bg:      #1E3A5F;
+  --color-tag-text:    #93B4FF;
+  --color-muted:       #94A3B8;
+  --color-light:       #64748B;
+  --color-faint:       #475569;
 }
 
 html { scroll-behavior: smooth; }
-
-body {
-  font-family: var(--font-sans);
-  background: var(--color-bg);
-  color: var(--color-text-primary);
-  -webkit-font-smoothing: antialiased;
-  transition: background 0.3s ease, color 0.3s ease;
-}
-
-ul { list-style: none; }
-a  { text-decoration: none; }
-button { cursor: pointer; font-family: var(--font-sans); }
-input, textarea { font-family: var(--font-sans); }
+body { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
 
 /* Scroll progress bar */
 #scroll-progress {
-  position: fixed; top: 0; left: 0; height: 3px; z-index: 9999;
+  @apply fixed top-0 left-0 h-[3px] z-[9999] w-0;
   background: linear-gradient(90deg, #6688CC, #1B2A5C);
-  width: 0%; transition: width 0.1s linear;
+  transition: width 0.1s linear;
 }
 
-/* Back to top button */
+/* Back to top */
 #back-to-top {
-  position: fixed; bottom: 2rem; right: 2rem;
-  width: 42px; height: 42px; border-radius: 50%;
-  background: var(--color-navy); color: #fff;
-  border: none; font-size: 18px;
-  display: flex; align-items: center; justify-content: center;
-  cursor: pointer; z-index: 100;
-  opacity: 0; pointer-events: none;
-  transition: opacity 0.25s ease, transform 0.2s ease;
+  @apply fixed bottom-8 right-8 w-11 h-11 rounded-full border-none
+         flex items-center justify-center text-lg cursor-pointer z-[100]
+         opacity-0 pointer-events-none text-white;
+  background: var(--color-navy);
   box-shadow: 0 4px 12px rgba(30,60,120,0.25);
+  transition: opacity 0.25s ease, transform 0.2s ease;
 }
-#back-to-top.visible { opacity: 1; pointer-events: all; }
-#back-to-top:hover   { transform: translateY(-3px); }
+#back-to-top.visible  { @apply opacity-100 pointer-events-auto; }
+#back-to-top:hover    { transform: translateY(-3px); }
 
-/* Custom cursor */
-.custom-cursor {
-  width: 12px; height: 12px; border-radius: 50%;
-  background: var(--color-accent); opacity: 0.85;
-  position: fixed; pointer-events: none; z-index: 9998;
-  transform: translate(-50%, -50%);
-  transition: width 0.2s, height 0.2s, background 0.2s;
-}
-.custom-cursor.hover { width: 28px; height: 28px; opacity: 0.45; }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
