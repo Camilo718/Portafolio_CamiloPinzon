@@ -11,7 +11,7 @@ export default function ExperienceSection() {
       <div className="grid grid-cols-[1fr_2fr] items-start gap-12">
         <FadeIn direction="left">
           <div className="flex justify-center pt-4">
-            <img src="/images/Experience.png" alt="Experience" className="max-w-[280px] w-full object-contain" />
+            <img src="../../public/images/Experience.png" alt="Experience" className="max-w-[280px] w-full object-contain" />
           </div>
         </FadeIn>
 

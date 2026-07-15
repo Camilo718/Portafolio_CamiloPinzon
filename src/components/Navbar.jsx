@@ -1,5 +1,3 @@
-import { PERSONAL } from "../data/portfolioData";
-
 export default function Navbar({ active, onNav, darkMode, toggleDark, navLinks }) {
   return (
     <nav
@@ -8,7 +6,7 @@ export default function Navbar({ active, onNav, darkMode, toggleDark, navLinks }
     >
       <div className="font-serif text-lg font-medium" style={{ color: "var(--color-navy)" }}>
         <span className="font-mono text-sm" style={{ color: "var(--color-accent)" }}>{"< "}</span>
-        {PERSONAL.name.split(" ")[0]}
+        <img src="../../public/Images/Firma.png" alt="Firma" className="inline-block max-h-10 w-auto object-contain" />
         <span className="font-mono text-sm" style={{ color: "var(--color-accent)" }}>{" />"}</span>
       </div>
 

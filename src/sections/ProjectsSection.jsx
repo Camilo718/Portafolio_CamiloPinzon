@@ -16,7 +16,7 @@ export default function ProjectsSection() {
       {/* Header */}
       <div className="grid grid-cols-2 items-center gap-8 mb-10">
         <FadeIn direction="left">
-          <img src="/images/Proyects.png" alt="Projects" className="max-w-[360px] w-full object-contain mx-auto" />
+          <img src="../../public/images/Proyects.png" alt="Projects" className="max-w-[360px] w-full object-cover mx-auto" />
         </FadeIn>
         <FadeIn direction="right">
           <SectionTitle>Proyectos</SectionTitle>

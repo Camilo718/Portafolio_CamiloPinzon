@@ -7,82 +7,97 @@ export default function HomeSection() {
   return (
     <section id="home" style={{ background: "var(--color-bg)" }}>
       {/* Hero */}
-      <div className="grid grid-cols-2 items-center gap-8 px-10 pt-14 pb-8 min-h-[420px]">
+      <div style={{
+        display: "grid", gridTemplateColumns: "1fr 1fr",
+        alignItems: "center", gap: "2rem",
+        padding: "3.5rem 2.5rem 2rem",
+        minHeight: 420,
+      }}>
         <FadeIn direction="left">
-          <p className="text-sm font-medium tracking-widest mb-2" style={{ color: "var(--color-accent)" }}>
+          <p style={{ fontSize: 14, color: "var(--color-accent)", fontWeight: 500, marginBottom: 8, letterSpacing: 1 }}>
             HOLA, SOY
           </p>
-          <h1 className="text-5xl font-semibold leading-tight mb-3" style={{ color: "var(--color-navy)" }}>
+          <h1 style={{ fontSize: 40, fontWeight: 600, color: "var(--color-navy)", lineHeight: 1.12, marginBottom: 10 }}>
             {PERSONAL.name}
           </h1>
-          <p className="text-lg mb-4 min-h-[28px]" style={{ color: "var(--color-muted)" }}>
+          <p style={{ fontSize: 18, color: "var(--color-text-muted)", marginBottom: "1rem", minHeight: 28 }}>
             <TypingEffect />
           </p>
-          <p className="text-sm leading-relaxed max-w-md mb-6" style={{ color: "var(--color-light)" }}>
+          <p style={{ fontSize: 14, color: "var(--color-text-light)", lineHeight: 1.8, maxWidth: 400, marginBottom: "1.5rem" }}>
             {PERSONAL.bio}
           </p>
 
-          {/* Socials */}
-          <div className="flex gap-2.5 mb-6">
-            {SOCIALS.map((s) => (
-              <a
-                key={s.label}
-                href={s.href}
-                aria-label={s.label}
-                className="w-9 h-9 rounded-full flex items-center justify-center text-base text-white
-                           transition-transform duration-200 hover:scale-110"
-                style={{ background: "var(--color-navy)" }}
-              >
-                {s.icon}
-              </a>
-            ))}
+          <div style={{ display: "flex", gap: 10, marginBottom: "1.5rem" }}>
+            {SOCIALS.map((s) => {
+              const Icon = s.icon;
+              return (
+                <a key={s.label} href={s.href} aria-label={s.label} style={{
+                  width: 38, height: 38, borderRadius: "50%",
+                  background: "var(--color-navy)", color: "#fff",
+                  display: "flex", alignItems: "center", justifyContent: "center",
+                  fontSize: 16, transition: "transform var(--transition-fast)",
+                }}
+                  onMouseEnter={(e) => e.currentTarget.style.transform = "scale(1.12)"}
+                  onMouseLeave={(e) => e.currentTarget.style.transform = "scale(1)"}
+                >
+                  <Icon size={16} />
+                </a>
+              );
+            })}
           </div>
 
-          {/* CTAs */}
-          <div className="flex gap-3">
-            <button
-              className="px-6 py-2.5 rounded-lg text-sm font-medium text-white border-none cursor-pointer
-                         transition-colors duration-200"
-              style={{ background: "var(--color-navy)" }}
+          <div style={{ display: "flex", gap: 12 }}>
+            <button style={{
+              background: "var(--color-navy)", color: "#fff", border: "none",
+              padding: "10px 22px", borderRadius: "var(--radius-btn)",
+              fontSize: 14, fontWeight: 500,
+              transition: "background var(--transition-fast)",
+            }}
               onMouseEnter={(e) => e.currentTarget.style.background = "var(--color-navy-light)"}
               onMouseLeave={(e) => e.currentTarget.style.background = "var(--color-navy)"}
               onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
             >
               {PERSONAL.ctaLabel}
             </button>
-            <a
-              href={PERSONAL.cvFile}
-              download
-              className="px-6 py-2.5 rounded-lg text-sm font-medium border-[1.5px] inline-flex items-center gap-1.5
-                         transition-all duration-200 hover:text-white"
-              style={{ color: "var(--color-navy)", borderColor: "var(--color-navy)" }}
+            <a href={PERSONAL.cvFile} download style={{
+              background: "transparent", color: "var(--color-navy)",
+              border: "1.5px solid var(--color-navy)",
+              padding: "10px 22px", borderRadius: "var(--radius-btn)",
+              fontSize: 14, fontWeight: 500,
+              transition: "all var(--transition-fast)",
+              display: "inline-flex", alignItems: "center", gap: 6,
+            }}
               onMouseEnter={(e) => { e.currentTarget.style.background = "var(--color-navy)"; e.currentTarget.style.color = "#fff"; }}
               onMouseLeave={(e) => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = "var(--color-navy)"; }}
             >
-              ⬇️ Descargar CV
+              ⬇ Descargar CV
             </a>
           </div>
         </FadeIn>
 
         <FadeIn direction="right" delay={150}>
-          <div className="flex justify-center">
-            <img src="/images/home.png" alt="Hero" className="max-w-[420px] w-full object-contain" />
+          <div style={{ display: "flex", justifyContent: "center" }}>
+            <img src="../../public/Images/home.png" alt="Hero" style={{ maxWidth: 520, width: "100%", objectFit: "cover" }} />
           </div>
         </FadeIn>
       </div>
 
       {/* Stats */}
-      <div className="grid grid-cols-4 gap-4 px-10 pb-12">
+      <div style={{
+        display: "grid", gridTemplateColumns: "repeat(4, 1fr)",
+        gap: "1rem", padding: "1.5rem 2.5rem 3rem",
+      }}>
         {STATS.map((stat, i) => (
           <FadeIn key={stat.label} delay={i * 80}>
-            <div
-              className="rounded-2xl border p-5 text-center shadow-sm"
-              style={{ background: "var(--color-bg-card)", borderColor: "var(--color-tag-bg)" }}
-            >
-              <p className="text-4xl font-bold" style={{ color: "var(--color-navy)" }}>
+            <div style={{
+              background: "var(--color-bg-card)", borderRadius: "var(--radius-card)",
+              border: "var(--border-card)", padding: "1.25rem",
+              textAlign: "center", boxShadow: "var(--shadow-card)",
+            }}>
+              <p style={{ fontSize: 32, fontWeight: 700, color: "var(--color-navy)" }}>
                 <AnimatedCounter value={stat.value} suffix={stat.suffix} />
               </p>
-              <p className="text-sm mt-1" style={{ color: "var(--color-muted)" }}>{stat.label}</p>
+              <p style={{ fontSize: 13, color: "var(--color-text-muted)", marginTop: 4 }}>{stat.label}</p>
             </div>
           </FadeIn>
         ))}

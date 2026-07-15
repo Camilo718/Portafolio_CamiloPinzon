@@ -50,9 +50,9 @@ export default function ContactSection() {
       <div className="grid grid-cols-2 items-center gap-12">
         <FadeIn direction="left">
           <img
-            src="/images/Messange.png"
+            src="../../public/images/Messange.png"
             alt="Contact"
-            className="max-w-[360px] w-full object-contain mx-auto"
+            className="max-w-[760px] w-full object-cover mx-auto"
           />
         </FadeIn>
 
