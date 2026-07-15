@@ -2,106 +2,112 @@ import { PERSONAL, SOCIALS, STATS } from "../data/portfolioData";
 import TypingEffect from "../components/TypingEffect";
 import AnimatedCounter from "../components/AnimatedCounter";
 import FadeIn from "../components/FadeIn";
+import TechCarousel from "../components/TechCarousel";
+import { useToast } from "../components/Toast";
+import { SiGithub, SiX, SiDribbble } from "react-icons/si";
+import { FaLinkedin } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
+import { Download, Eye } from "lucide-react";
+
+const SOCIAL_ICONS = {
+  GitHub:   { Icon: SiGithub,   color: "#181717" },
+  LinkedIn: { Icon: FaLinkedin, color: "#0A66C2" },
+  Twitter:  { Icon: SiX,        color: "#000000" },
+  Dribbble: { Icon: SiDribbble, color: "#EA4C89" },
+  Email:    { Icon: MdEmail,    color: "#EA4335" },
+};
 
 export default function HomeSection() {
+  const toast = useToast();
+
   return (
     <section id="home" style={{ background: "var(--color-bg)" }}>
       {/* Hero */}
-      <div style={{
-        display: "grid", gridTemplateColumns: "1fr 1fr",
-        alignItems: "center", gap: "2rem",
-        padding: "3.5rem 2.5rem 2rem",
-        minHeight: 420,
-      }}>
+      <div className="grid grid-cols-2 items-center gap-8 px-10 pt-14 pb-8 min-h-[420px]">
         <FadeIn direction="left">
-          <p style={{ fontSize: 14, color: "var(--color-accent)", fontWeight: 500, marginBottom: 8, letterSpacing: 1 }}>
+          <p className="text-sm font-medium tracking-widest mb-2" style={{ color: "var(--color-accent)" }}>
             HOLA, SOY
           </p>
-          <h1 style={{ fontSize: 40, fontWeight: 600, color: "var(--color-navy)", lineHeight: 1.12, marginBottom: 10 }}>
+          <h1 className="text-5xl font-semibold leading-tight mb-3" style={{ color: "var(--color-navy)" }}>
             {PERSONAL.name}
           </h1>
-          <p style={{ fontSize: 18, color: "var(--color-text-muted)", marginBottom: "1rem", minHeight: 28 }}>
+          <p className="text-lg mb-4 min-h-[28px]" style={{ color: "var(--color-muted)" }}>
             <TypingEffect />
           </p>
-          <p style={{ fontSize: 14, color: "var(--color-text-light)", lineHeight: 1.8, maxWidth: 400, marginBottom: "1.5rem" }}>
+          <p className="text-sm leading-relaxed max-w-md mb-6" style={{ color: "var(--color-light)" }}>
             {PERSONAL.bio}
           </p>
 
-          <div style={{ display: "flex", gap: 10, marginBottom: "1.5rem" }}>
+          {/* Socials con react-icons */}
+          <div className="flex gap-2.5 mb-6">
             {SOCIALS.map((s) => {
-              const Icon = s.icon;
+              const si = SOCIAL_ICONS[s.label];
+              if (!si) return null;
+              const { Icon, color } = si;
               return (
-                <a key={s.label} href={s.href} aria-label={s.label} style={{
-                  width: 38, height: 38, borderRadius: "50%",
-                  background: "var(--color-navy)", color: "#fff",
-                  display: "flex", alignItems: "center", justifyContent: "center",
-                  fontSize: 16, transition: "transform var(--transition-fast)",
-                }}
-                  onMouseEnter={(e) => e.currentTarget.style.transform = "scale(1.12)"}
-                  onMouseLeave={(e) => e.currentTarget.style.transform = "scale(1)"}
-                >
-                  <Icon size={16} />
+                <a key={s.label} href={s.href} aria-label={s.label} target="_blank" rel="noreferrer"
+                  className="w-9 h-9 rounded-full flex items-center justify-center border
+                             transition-transform duration-200 hover:scale-110 hover:shadow-md"
+                  style={{ background: "var(--color-bg-card)", borderColor: "var(--color-tag-bg)" }}>
+                  <Icon size={16} color={color} />
                 </a>
               );
             })}
           </div>
 
-          <div style={{ display: "flex", gap: 12 }}>
-            <button style={{
-              background: "var(--color-navy)", color: "#fff", border: "none",
-              padding: "10px 22px", borderRadius: "var(--radius-btn)",
-              fontSize: 14, fontWeight: 500,
-              transition: "background var(--transition-fast)",
-            }}
+          {/* CTAs */}
+          <div className="flex gap-3">
+            <button
+              className="flex items-center gap-2 px-6 py-2.5 rounded-lg text-sm font-medium text-white
+                         border-none cursor-pointer transition-colors duration-200"
+              style={{ background: "var(--color-navy)" }}
               onMouseEnter={(e) => e.currentTarget.style.background = "var(--color-navy-light)"}
               onMouseLeave={(e) => e.currentTarget.style.background = "var(--color-navy)"}
-              onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
+              onClick={() => {
+                document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
+                toast.info("¡Revisa mis proyectos! 🚀");
+              }}
             >
-              {PERSONAL.ctaLabel}
+              <Eye size={15} /> {PERSONAL.ctaLabel}
             </button>
-            <a href={PERSONAL.cvFile} download style={{
-              background: "transparent", color: "var(--color-navy)",
-              border: "1.5px solid var(--color-navy)",
-              padding: "10px 22px", borderRadius: "var(--radius-btn)",
-              fontSize: 14, fontWeight: 500,
-              transition: "all var(--transition-fast)",
-              display: "inline-flex", alignItems: "center", gap: 6,
-            }}
+            <a
+              href={PERSONAL.cvFile} download
+              className="flex items-center gap-2 px-6 py-2.5 rounded-lg text-sm font-medium border-[1.5px]
+                         transition-all duration-200"
+              style={{ color: "var(--color-navy)", borderColor: "var(--color-navy)" }}
               onMouseEnter={(e) => { e.currentTarget.style.background = "var(--color-navy)"; e.currentTarget.style.color = "#fff"; }}
               onMouseLeave={(e) => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = "var(--color-navy)"; }}
+              onClick={() => toast.success("Descargando CV... 📄")}
             >
-              ⬇ Descargar CV
+              <Download size={15} /> Descargar CV
             </a>
           </div>
         </FadeIn>
 
         <FadeIn direction="right" delay={150}>
-          <div style={{ display: "flex", justifyContent: "center" }}>
-            <img src="../../public/Images/home.png" alt="Hero" style={{ maxWidth: 520, width: "100%", objectFit: "cover" }} />
+          <div className="flex justify-center">
+            <img src="../../public/images/home.png" alt="Hero" className="max-w-[500px] w-full object-contain" />
           </div>
         </FadeIn>
       </div>
 
       {/* Stats */}
-      <div style={{
-        display: "grid", gridTemplateColumns: "repeat(4, 1fr)",
-        gap: "1rem", padding: "1.5rem 2.5rem 3rem",
-      }}>
+      <div className="grid grid-cols-4 gap-4 px-10 pb-6">
         {STATS.map((stat, i) => (
           <FadeIn key={stat.label} delay={i * 80}>
-            <div style={{
-              background: "var(--color-bg-card)", borderRadius: "var(--radius-card)",
-              border: "var(--border-card)", padding: "1.25rem",
-              textAlign: "center", boxShadow: "var(--shadow-card)",
-            }}>
-              <p style={{ fontSize: 32, fontWeight: 700, color: "var(--color-navy)" }}>
+            <div className="rounded-2xl border p-5 text-center shadow-sm"
+              style={{ background: "var(--color-bg-card)", borderColor: "var(--color-tag-bg)" }}>
+              <p className="text-4xl font-bold" style={{ color: "var(--color-navy)" }}>
                 <AnimatedCounter value={stat.value} suffix={stat.suffix} />
               </p>
-              <p style={{ fontSize: 13, color: "var(--color-text-muted)", marginTop: 4 }}>{stat.label}</p>
+              <p className="text-sm mt-1" style={{ color: "var(--color-muted)" }}>{stat.label}</p>
             </div>
           </FadeIn>
         ))}
       </div>
+
+      {/* Tech Carousel */}
+      <TechCarousel />
     </section>
   );
 }

@@ -1,12 +1,22 @@
-// ─────────────────────────────────────────────
-//  portfolioData.js — toda tu info aquí
-// ─────────────────────────────────────────────
+import {
+  SiGithub,      
+  SiX,           
+  SiGmail,       
+  SiReact,       
+  SiFigma,     
+  SiDhl,         
+  SiShopify,     
+  SiVite,       
+  SiPython,      
+  SiGrafana     
+} from "react-icons/si";
+import { HiOutlineBriefcase } from "react-icons/hi";
 
 export const PERSONAL = {
   name:     "Camilo Andrés Pinzón",
   alias:    "camilo_dev",
   bio:      "Soy una persona organizada y responsable, con habilidades en Design Thinking, programación Frontend y análisis de datos. Me destaco por mi integridad, trabajo en equipo y disposición para crear soluciones innovadoras.",
-  ctaLabel: "⭐ Ver mis proyectos",
+  ctaLabel: "Ver mis proyectos", 
   email:    "camiloandrespinzonmelendrez@gmail.com",
   phone:    "315-8094-952",
   location: "Carrera 87#131-06",
@@ -16,10 +26,10 @@ export const PERSONAL = {
 export const NAV_LINKS = ["Home", "Education", "Experience", "Projects", "Contact Me"];
 
 export const SOCIALS = [
-  { label: "GitHub",   icon: "⌨️", href: "#" },
-  { label: "LinkedIn", icon: "💼", href: "#" },
-  { label: "Twitter",  icon: "🐦", href: "#" },
-  { label: "Email",    icon: "✉️", href: `mailto:camiloandrespinzonmelendrez@gmail.com` },
+  { label: "GitHub",   icon: SiGithub, href: "#" },   
+  { label: "LinkedIn", icon: HiOutlineBriefcase, href: "#" }, 
+  { label: "Twitter",  icon: SiX, href: "#" },        
+  { label: "Email",    icon: SiGmail, href: `mailto:camiloandrespinzonmelendrez@gmail.com` }, 
 ];
 
 export const STATS = [
@@ -31,9 +41,9 @@ export const STATS = [
 
 export const SKILLS = [
   {
-    icon: "📊",
+    icon: SiReact,
     title: "Frontend Development",
-    image: "/images/Develop.png",
+    image: "../../public/images/Develop.png",
     tags: ["React", "JavaScript", "TypeScript", "HTML/CSS"],
     items: [
       "Desarrollo de interfaces responsivas con React",
@@ -42,9 +52,9 @@ export const SKILLS = [
     ],
   },
   {
-    icon: "🎨",
+    icon: SiFigma, // Basado en 🎨
     title: "Diseño & Datos",
-    image: "/images/Graficas.png",
+    image: "../../public/images/Graficas.png",
     tags: ["Python", "Diseño UI", "Design Thinking", "Análisis de datos"],
     items: [
       "Pensamiento de diseño para soluciones innovadoras",
@@ -89,7 +99,7 @@ export const EXPERIENCE = [
     location: "Colombia",
     description:
       "Operador logístico de almacén de cadena, manipulación higiénica de alimentos y trabajo en empaquetado. Desarrollé habilidades de organización, responsabilidad y trabajo en equipo.",
-    logo: "📦",
+    logo: SiDhl, // Basado en 📦 (Logística/Paquetería)
   },
   {
     role: "Ventas & Comercio",
@@ -98,48 +108,48 @@ export const EXPERIENCE = [
     location: "Colombia",
     description:
       "Conocimiento en ventas, comunicación efectiva, gestión en inventario y logística. Capacidad de relacionamiento con clientes y resolución de problemas.",
-    logo: "🛒",
+    logo: SiShopify, // Basado en 🛒 (Comercio/Ventas)
   },
 ];
 
 export const PROJECTS = [
   {
-    icon: "🌐",
+    icon: SiVite, // Basado en 🌐 (Proyecto Web)
     title: "Portafolio Personal",
     description: "Portafolio web construido con React + Vite. Incluye dark mode, animaciones y secciones dinámicas.",
     tags: ["React", "Vite", "CSS"],
     link: "#",
   },
   {
-    icon: "📱",
+    icon: SiReact, // Basado en 📱 (App Frontend)
     title: "App Frontend React",
     description: "Aplicación web responsiva desarrollada con React y buenas prácticas de componentes.",
     tags: ["React", "JavaScript", "UI"],
     link: "#",
   },
   {
-    icon: "🐍",
+    icon: SiPython, // Basado en 🐍
     title: "Análisis de Datos Python",
     description: "Proyecto de análisis y visualización de datos usando Python.",
     tags: ["Python", "Datos", "Análisis"],
     link: "#",
   },
   {
-    icon: "🎨",
+    icon: SiFigma, // Basado en 🎨
     title: "Diseño UI/UX",
     description: "Propuesta de diseño de interfaz aplicando principios de Design Thinking y UX.",
     tags: ["Design Thinking", "UI", "UX"],
     link: "#",
   },
   {
-    icon: "🛒",
+    icon: SiShopify, // Basado en 🛒 (Sistema de gestión/inventario)
     title: "Gestión de Inventario",
     description: "Sistema básico de gestión de inventario desarrollado durante formación técnica.",
     tags: ["JavaScript", "Lógica", "SENA"],
     link: "#",
   },
   {
-    icon: "📊",
+    icon: SiGrafana, // Basado en 📊 (Dashboard Analítico / Métricas)
     title: "Dashboard Analítico",
     description: "Dashboard de visualización de métricas con componentes React reutilizables.",
     tags: ["React", "TypeScript", "Charts"],

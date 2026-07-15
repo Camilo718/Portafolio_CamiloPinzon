@@ -11,7 +11,7 @@ export default function ExperienceSection() {
       <div className="grid grid-cols-[1fr_2fr] items-start gap-12">
         <FadeIn direction="left">
           <div className="flex justify-center pt-4">
-            <img src="../../public/images/Experience.png" alt="Experience" className="max-w-[280px] w-full object-contain" />
+            <img src="../../public/images/Experience.png" alt="Experience" className="max-w-[380px] w-full object-contain" />
           </div>
         </FadeIn>
 
@@ -28,13 +28,14 @@ export default function ExperienceSection() {
                   {/* Dot */}
                   <div
                     className="min-w-[40px] h-10 rounded-full flex items-center justify-center
-                               text-lg text-white z-10 shrink-0"
+                               text-white z-10 shrink-0"
                     style={{
                       background: "var(--color-navy)",
                       boxShadow: "0 0 0 4px var(--color-bg)",
                     }}
                   >
-                    {exp.logo}
+                    {/* ✅ AQUÍ EL CAMBIO: renderizar como componente JSX */}
+                    <exp.logo size={20} />
                   </div>
 
                   {/* Card */}
@@ -65,4 +66,4 @@ export default function ExperienceSection() {
       </div>
     </section>
   );
-}
+} 

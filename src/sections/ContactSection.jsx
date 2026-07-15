@@ -4,6 +4,10 @@ import { SectionTitle, SectionDivider } from "../components/SectionTitle";
 import { SOCIALS } from "../data/portfolioData";
 import FadeIn from "../components/FadeIn";
 
+// ✅ Importamos los iconos necesarios
+import { HiCheckCircle, HiXCircle } from "react-icons/hi";
+import { FiSend, FiLoader } from "react-icons/fi";
+
 const SERVICE_ID  = "service_puhce1v";
 const TEMPLATE_ID = "template_ophvzwf";
 const PUBLIC_KEY  = "L8i7FIFgUbU5Oyz26";
@@ -62,7 +66,10 @@ export default function ContactSection() {
               className="rounded-2xl border p-10 text-center shadow-sm"
               style={{ background: "var(--color-bg-card)", borderColor: "var(--color-tag-bg)" }}
             >
-              <div className="text-5xl mb-4">✅</div>
+              {/* ✅ Reemplazo de ✅ por HiCheckCircle */}
+              <div className="text-6xl mb-4 flex justify-center text-green-500">
+                <HiCheckCircle />
+              </div>
               <h3 className="text-xl font-medium mb-2" style={{ color: "var(--color-navy)" }}>
                 ¡Mensaje enviado!
               </h3>
@@ -71,7 +78,7 @@ export default function ContactSection() {
               </p>
               <button
                 onClick={() => setStatus("idle")}
-                className="px-5 py-2 rounded-lg text-sm font-medium text-white border-none cursor-pointer"
+                className="px-5 py-2 rounded-lg text-sm font-medium text-white border-none cursor-pointer transition-opacity hover:opacity-90"
                 style={{ background: "var(--color-navy)" }}
               >
                 Enviar otro mensaje
@@ -99,8 +106,9 @@ export default function ContactSection() {
               />
 
               {status === "error" && (
-                <p className="text-sm text-red-500 text-center">
-                  ❌ Algo salió mal, intenta de nuevo.
+                /* ✅ Reemplazo de ❌ por HiXCircle */
+                <p className="text-sm text-red-500 text-center flex items-center justify-center gap-2">
+                  <HiXCircle size={18} /> Algo salió mal, intenta de nuevo.
                 </p>
               )}
 
@@ -108,12 +116,22 @@ export default function ContactSection() {
                 onClick={handleSubmit}
                 disabled={status === "sending"}
                 className="w-full py-3 rounded-xl text-sm font-semibold text-white border-none cursor-pointer
-                           transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed"
+                           transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                 style={{ background: "var(--color-navy)" }}
-                onMouseEnter={(e) => e.currentTarget.style.background = "var(--color-navy-light)"}
+                onMouseEnter={(e) => e.currentTarget.style.background = "var(--color-navy-light, #1e3a8a)"}
                 onMouseLeave={(e) => e.currentTarget.style.background = "var(--color-navy)"}
               >
-                {status === "sending" ? "Enviando... ⏳" : "Enviar mensaje ✉️"}
+                {/* ✅ Reemplazo de ⏳ y ✉️ por FiLoader y FiSend */}
+                {status === "sending" ? (
+                  <>
+                    <FiLoader className="animate-spin" size={18} />
+                    Enviando...
+                  </>
+                ) : (
+                  <>
+                    Enviar mensaje <FiSend size={18} />
+                  </>
+                )}
               </button>
 
               {/* Socials */}
@@ -121,11 +139,12 @@ export default function ContactSection() {
                 {SOCIALS.map((s) => (
                   <a
                     key={s.label} href={s.href} aria-label={s.label}
-                    className="w-9 h-9 rounded-full flex items-center justify-center text-sm
+                    className="w-9 h-9 rounded-full flex items-center justify-center 
                                transition-transform duration-200 hover:scale-110"
                     style={{ background: "var(--color-bg-alt)", color: "var(--color-navy)" }}
                   >
-                    {s.icon}
+                    {/* ✅ Renderizado correcto del componente de icono social */}
+                    <s.icon size={18} />
                   </a>
                 ))}
               </div>
