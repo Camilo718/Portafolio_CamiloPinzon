@@ -1,4 +1,5 @@
 import {
+  SiWhatsapp,
   SiGithub,      
   SiX,           
   SiGmail,       
@@ -30,6 +31,7 @@ export const SOCIALS = [
   { label: "LinkedIn", icon: HiOutlineBriefcase, href: "#" }, 
   { label: "Twitter",  icon: SiX, href: "#" },        
   { label: "Email",    icon: SiGmail, href: `mailto:camiloandrespinzonmelendrez@gmail.com` }, 
+  { label: "WhatsApp", icon: SiWhatsapp, href: "https://wa.me/573158094952" },
 ];
 
 export const STATS = [
