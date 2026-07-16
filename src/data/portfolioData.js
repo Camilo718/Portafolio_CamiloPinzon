@@ -16,8 +16,8 @@ import { HiOutlineBriefcase } from "react-icons/hi";
 export const PERSONAL = {
   name:     "Camilo Andrés Pinzón",
   alias:    "camilo_dev",
-  bio:      "Soy una persona organizada y responsable, con habilidades en Design Thinking, programación Frontend y análisis de datos. Me destaco por mi integridad, trabajo en equipo y disposición para crear soluciones innovadoras.",
-  ctaLabel: "Ver mis proyectos", 
+  bio:      "I am an organized and responsible individual with strong skills in Design Thinking, Frontend development, and data analysis. I stand out for my integrity, teamwork, and readiness to build innovative solutions.",
+  ctaLabel: "View my projects", 
   email:    "camiloandrespinzonmelendrez@gmail.com",
   phone:    "315-8094-952",
   location: "Carrera 87#131-06",
@@ -35,10 +35,10 @@ export const SOCIALS = [
 ];
 
 export const STATS = [
-  { value: 3,  suffix: "+", label: "Años estudiando" },
-  { value: 10, suffix: "+", label: "Proyectos" },
-  { value: 5,  suffix: "",  label: "Tecnologías" },
-  { value: 2,  suffix: "",  label: "Certificaciones" },
+  { value: 3,  suffix: "+", label: "Years studying" },
+  { value: 10, suffix: "+", label: "Projects" },
+  { value: 5,  suffix: "",  label: "Technologies" },
+  { value: 2,  suffix: "",  label: "Certifications" },
 ];
 
 export const SKILLS = [
@@ -48,115 +48,115 @@ export const SKILLS = [
     image: "../../public/images/Develop.png",
     tags: ["React", "JavaScript", "TypeScript", "HTML/CSS"],
     items: [
-      "Desarrollo de interfaces responsivas con React",
-      "Manejo de TypeScript y JavaScript moderno",
-      "Habilidades en diseño y maquetación Frontend",
+      "Developing responsive user interfaces with React",
+      "Handling TypeScript and modern JavaScript",
+      "Strong skills in Frontend design and layout",
     ],
   },
   {
-    icon: SiFigma, // Basado en 🎨
-    title: "Diseño & Datos",
+    icon: SiFigma, // Based on 🎨
+    title: "Design & Data",
     image: "../../public/images/Graficas.png",
-    tags: ["Python", "Diseño UI", "Design Thinking", "Análisis de datos"],
+    tags: ["Python", "UI Design", "Design Thinking", "Data Analysis"],
     items: [
-      "Pensamiento de diseño para soluciones innovadoras",
-      "Análisis de datos con Python",
-      "Gestión del tiempo y trabajo colaborativo en equipo",
+      "Applying design thinking to create innovative solutions",
+      "Data analysis utilizing Python",
+      "Effective time management and collaborative teamwork",
     ],
   },
 ];
 
 export const EDUCATION = [
   {
-    badge: "Técnico",
-    title: "Técnico en Programación de Software",
+    badge: "Technical",
+    title: "Software Programming Technician",
     institution: "SENA",
-    year: "En curso",
+    year: "In Progress",
   },
   {
-    badge: "Formación",
-    title: "Formación P-Tech",
+    badge: "Training",
+    title: "P-Tech Program",
     institution: "IBM – SkillsBuild",
-    year: "Completado",
+    year: "Completed",
   },
   {
-    badge: "Bachiller",
-    title: "Bachiller Académico",
+    badge: "High School",
+    title: "Academic Baccalaureate",
     institution: "Colegio Gerardo Paredes",
-    year: "Graduado",
+    year: "Graduated",
   },
   {
-    badge: "Habilidad",
+    badge: "Skill",
     title: "Design Thinking & Mindfulness",
-    institution: "Autodidacta",
-    year: "Continuo",
+    institution: "Self-taught",
+    year: "Ongoing",
   },
 ];
 
 export const EXPERIENCE = [
   {
-    role: "Auxiliar de Bodega",
+    role: "Warehouse Assistant",
     company: "Grupo Éxito / Coordinadora",
-    period: "Experiencia previa",
+    period: "Prior Experience",
     location: "Colombia",
     description:
-      "Operador logístico de almacén de cadena, manipulación higiénica de alimentos y trabajo en empaquetado. Desarrollé habilidades de organización, responsabilidad y trabajo en equipo.",
-    logo: SiDhl, // Basado en 📦 (Logística/Paquetería)
+      "Logistics operator for a major retail chain, handling hygienic food management and packaging operations. Developed strong organizational, accountability, and teamwork skills.",
+    logo: SiDhl, // Based on 📦 (Logistics/Parcel)
   },
   {
-    role: "Ventas & Comercio",
-    company: "Experiencia en comercio",
-    period: "Experiencia previa",
+    role: "Sales & Commerce",
+    company: "Retail Experience",
+    period: "Prior Experience",
     location: "Colombia",
     description:
-      "Conocimiento en ventas, comunicación efectiva, gestión en inventario y logística. Capacidad de relacionamiento con clientes y resolución de problemas.",
-    logo: SiShopify, // Basado en 🛒 (Comercio/Ventas)
+      "Gained expertise in retail sales, effective communication, inventory management, and logistics. Strong capability in customer relations and problem-solving.",
+    logo: SiShopify, // Based on 🛒 (Commerce/Sales)
   },
 ];
 
 export const PROJECTS = [
   {
-    icon: SiVite, // Basado en 🌐 (Proyecto Web)
-    title: "Portafolio Personal",
-    description: "Portafolio web construido con React + Vite. Incluye dark mode, animaciones y secciones dinámicas.",
+    icon: SiVite, // Based on 🌐 (Web Project)
+    title: "Personal Portfolio",
+    description: "A web portfolio built using React + Vite. Features dark mode, smooth animations, and dynamic sections.",
     tags: ["React", "Vite", "CSS"],
     link: "#",
   },
   {
-    icon: SiReact, // Basado en 📱 (App Frontend)
-    title: "App Frontend React",
-    description: "Aplicación web responsiva desarrollada con React y buenas prácticas de componentes.",
+    icon: SiReact, // Based on 📱 (Frontend App)
+    title: "React Frontend App",
+    description: "Responsive web application developed with React applying best practices for reusable components.",
     tags: ["React", "JavaScript", "UI"],
     link: "#",
   },
   {
-    icon: SiPython, // Basado en 🐍
-    title: "Análisis de Datos Python",
-    description: "Proyecto de análisis y visualización de datos usando Python.",
-    tags: ["Python", "Datos", "Análisis"],
+    icon: SiPython, // Based on 🐍
+    title: "Python Data Analysis",
+    description: "Data analysis and visualization project using Python.",
+    tags: ["Python", "Data", "Analysis"],
     link: "#",
   },
   {
-    icon: SiFigma, // Basado en 🎨
-    title: "Diseño UI/UX",
-    description: "Propuesta de diseño de interfaz aplicando principios de Design Thinking y UX.",
+    icon: SiFigma, // Based on 🎨
+    title: "UI/UX Design",
+    description: "Interface design proposal applying Design Thinking and UX principles.",
     tags: ["Design Thinking", "UI", "UX"],
     link: "#",
   },
   {
-    icon: SiShopify, // Basado en 🛒 (Sistema de gestión/inventario)
-    title: "Gestión de Inventario",
-    description: "Sistema básico de gestión de inventario desarrollado durante formación técnica.",
-    tags: ["JavaScript", "Lógica", "SENA"],
+    icon: SiShopify, // Based on 🛒 (Management/Inventory System)
+    title: "Inventory Management",
+    description: "A basic inventory management system developed during my technical software training.",
+    tags: ["JavaScript", "Logic", "SENA"],
     link: "#",
   },
   {
-    icon: SiGrafana, // Basado en 📊 (Dashboard Analítico / Métricas)
-    title: "Dashboard Analítico",
-    description: "Dashboard de visualización de métricas con componentes React reutilizables.",
+    icon: SiGrafana, // Based on 📊 (Analytical Dashboard / Metrics)
+    title: "Analytical Dashboard",
+    description: "Metrics visualization dashboard built with reusable React components.",
     tags: ["React", "TypeScript", "Charts"],
     link: "#",
   },
 ];
 
-export const FILTER_TAGS = ["Todos", "React", "Python", "UI/UX", "JavaScript", "TypeScript"];
+export const FILTER_TAGS = ["All", "React", "Python", "UI/UX", "JavaScript", "TypeScript"];
