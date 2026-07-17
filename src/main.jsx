@@ -1,12 +1,21 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { ToastProvider } from "./components/Toast";
+import { Toaster } from "sonner";
 import App from "./App";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <ToastProvider>
-      <App />
-    </ToastProvider>
+    <Toaster
+      position="bottom-right"
+      richColors
+      closeButton
+      toastOptions={{
+        style: {
+          borderRadius: "14px",
+          fontSize: "13px",
+        },
+      }}
+    />
+    <App />
   </StrictMode>
 );

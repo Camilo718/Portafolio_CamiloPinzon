@@ -3,7 +3,6 @@ import TypingEffect from "../components/TypingEffect";
 import AnimatedCounter from "../components/AnimatedCounter";
 import FadeIn from "../components/FadeIn";
 import TechCarousel from "../components/TechCarousel";
-import { useToast } from "../components/Toast";
 import { SiGithub, SiX, SiDribbble } from "react-icons/si";
 import { FaLinkedin } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
@@ -18,11 +17,8 @@ const SOCIAL_ICONS = {
 };
 
 export default function HomeSection() {
-  const toast = useToast();
-
   return (
     <section id="home" style={{ background: "var(--color-bg)" }}>
-      {/* Hero */}
       <div className="grid grid-cols-2 items-center gap-8 px-10 pt-14 pb-8 min-h-[420px]">
         <FadeIn direction="left">
           <p className="text-sm font-medium tracking-widest mb-2" style={{ color: "var(--color-accent)" }}>
@@ -38,7 +34,6 @@ export default function HomeSection() {
             {PERSONAL.bio}
           </p>
 
-          {/* Socials con react-icons */}
           <div className="flex gap-2.5 mb-6">
             {SOCIALS.map((s) => {
               const si = SOCIAL_ICONS[s.label];
@@ -55,7 +50,6 @@ export default function HomeSection() {
             })}
           </div>
 
-          {/* CTAs */}
           <div className="flex gap-3">
             <button
               className="flex items-center gap-2 px-6 py-2.5 rounded-lg text-sm font-medium text-white
@@ -65,7 +59,7 @@ export default function HomeSection() {
               onMouseLeave={(e) => e.currentTarget.style.background = "var(--color-navy)"}
               onClick={() => {
                 document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
-                toast.info("¡Revisa mis proyectos! 🚀");
+                toast.info("¡Revisa mis proyectos!", { description: "Bajando a la sección" });
               }}
             >
               <Eye size={15} /> {PERSONAL.ctaLabel}
@@ -77,7 +71,7 @@ export default function HomeSection() {
               style={{ color: "var(--color-navy)", borderColor: "var(--color-navy)" }}
               onMouseEnter={(e) => { e.currentTarget.style.background = "var(--color-navy)"; e.currentTarget.style.color = "#fff"; }}
               onMouseLeave={(e) => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = "var(--color-navy)"; }}
-              onClick={() => toast.success("Descargando CV... 📄")}
+              onClick={() => toast.success("Descargando CV", { description: "El archivo se guardará en tus descargas" })}
             >
               <Download size={15} /> Descargar CV
             </a>
@@ -86,12 +80,11 @@ export default function HomeSection() {
 
         <FadeIn direction="right" delay={150}>
           <div className="flex justify-center">
-            <img src="../../public/images/home.png" alt="Hero" className="max-w-[500px] w-full object-contain" />
+            <img src="../../public/images/home.png" alt="Hero" className="max-w-[420px] w-full object-contain" />
           </div>
         </FadeIn>
       </div>
 
-      {/* Stats */}
       <div className="grid grid-cols-4 gap-4 px-10 pb-6">
         {STATS.map((stat, i) => (
           <FadeIn key={stat.label} delay={i * 80}>
@@ -105,8 +98,6 @@ export default function HomeSection() {
           </FadeIn>
         ))}
       </div>
-
-      {/* Tech Carousel */}
       <TechCarousel />
     </section>
   );

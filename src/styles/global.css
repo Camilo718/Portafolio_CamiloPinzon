@@ -1,7 +1,6 @@
 @import "tailwindcss";
 
 @theme {
-  /* Colors */
   --color-navy:        #1B2A5C;
   --color-navy-light:  #2A3F80;
   --color-accent:      #6688CC;
@@ -16,33 +15,15 @@
   --color-faint:       #8899BB;
 }
 
-/* Dark mode overrides */
-.dark {
-  --color-bg:          #0F172A;
-  --color-bg-alt:      #1E293B;
-  --color-bg-card:     #1E293B;
-  --color-bg-project:  #162032;
-  --color-navy:        #93B4FF;
-  --color-navy-light:  #BAD0FF;
-  --color-accent:      #6688CC;
-  --color-tag-bg:      #1E3A5F;
-  --color-tag-text:    #93B4FF;
-  --color-muted:       #94A3B8;
-  --color-light:       #64748B;
-  --color-faint:       #475569;
-}
-
 html { scroll-behavior: smooth; }
 body { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
 
-/* Scroll progress bar */
 #scroll-progress {
   @apply fixed top-0 left-0 h-[3px] z-[9999] w-0;
   background: linear-gradient(90deg, #6688CC, #1B2A5C);
   transition: width 0.1s linear;
 }
 
-/* Back to top */
 #back-to-top {
   @apply fixed bottom-8 right-8 w-11 h-11 rounded-full border-none
          flex items-center justify-center text-lg cursor-pointer z-[100]

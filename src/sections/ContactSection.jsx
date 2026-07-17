@@ -1,16 +1,16 @@
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
+import { toast } from "sonner";
 import { SectionTitle, SectionDivider } from "../components/SectionTitle";
 import { SOCIALS } from "../data/portfolioData";
 import FadeIn from "../components/FadeIn";
-import { useToast } from "../components/Toast";
 import { SiGithub, SiX, SiDribbble, SiWhatsapp } from "react-icons/si";
 import { MdEmail } from "react-icons/md";
 
 const SERVICE_ID  = "service_puhce1v";
 const TEMPLATE_ID = "template_ophvzwf";
 const PUBLIC_KEY  = "L8i7FIFgUbU5Oyz26";
-const WA_NUMBER   = "573158094952"; // Colombia +57
+const WA_NUMBER   = "573158094952";
 const WA_MESSAGE  = encodeURIComponent("Hola Camilo 👋, vi tu portafolio y me gustaría contactarte.");
 
 const SOCIAL_ICONS = {
@@ -22,14 +22,13 @@ const SOCIAL_ICONS = {
 };
 
 export default function ContactSection() {
-  const toast = useToast();
   const [status, setStatus] = useState("idle");
   const [form, setForm]     = useState({ name: "", email: "", message: "" });
   const onChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
   const handleSubmit = async () => {
     if (!form.name || !form.email || !form.message) {
-      toast.warning("Por favor completa todos los campos.");
+      toast.warning("Campos incompletos", { description: "Por favor completa todos los campos." });
       return;
     }
     setStatus("sending");
@@ -40,16 +39,16 @@ export default function ContactSection() {
       );
       setStatus("sent");
       setForm({ name: "", email: "", message: "" });
-      toast.success("¡Mensaje enviado! Te responderé pronto 🚀", "¡Éxito!");
+      toast.success("¡Mensaje enviado!", { description: "Te responderé pronto 🚀" });
     } catch {
       setStatus("idle");
-      toast.error("Algo salió mal, intenta de nuevo.", "Error");
+      toast.error("Algo salió mal", { description: "Intenta de nuevo más tarde." });
     }
   };
 
   const handleWhatsApp = () => {
     window.open(`https://wa.me/${WA_NUMBER}?text=${WA_MESSAGE}`, "_blank");
-    toast.success("Abriendo WhatsApp... 💬");
+    toast.success("Abriendo WhatsApp", { description: "Te llevamos a la conversación 💬" });
   };
 
   const inputStyle = {
@@ -101,9 +100,7 @@ export default function ContactSection() {
                 value={form.message} onChange={onChange}
                 className={inputClass + " resize-y"} style={inputStyle} />
 
-              {/* Botones de envío */}
               <div className="flex flex-col gap-3">
-                {/* Email */}
                 <button onClick={handleSubmit} disabled={status === "sending"}
                   className="w-full py-3 rounded-xl text-sm font-semibold text-white border-none
                              cursor-pointer transition-all duration-200 disabled:opacity-60"
@@ -113,14 +110,12 @@ export default function ContactSection() {
                   {status === "sending" ? "Enviando... ⏳" : "✉️  Enviar por Email"}
                 </button>
 
-                {/* Divisor */}
                 <div className="flex items-center gap-3">
                   <div className="flex-1 h-px" style={{ background: "var(--color-tag-bg)" }} />
                   <span className="text-xs" style={{ color: "var(--color-faint)" }}>o también</span>
                   <div className="flex-1 h-px" style={{ background: "var(--color-tag-bg)" }} />
                 </div>
 
-                {/* WhatsApp */}
                 <button onClick={handleWhatsApp}
                   className="w-full py-3 rounded-xl text-sm font-semibold text-white border-none
                              cursor-pointer transition-all duration-200 flex items-center justify-center gap-2"
@@ -132,7 +127,6 @@ export default function ContactSection() {
                 </button>
               </div>
 
-              {/* Socials */}
               <div className="flex justify-center gap-3 pt-1">
                 {SOCIALS.map((s) => {
                   const si = SOCIAL_ICONS[s.label];
