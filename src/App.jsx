@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import "./styles/global.css";
-
+import { useLanguage } from "./context/LanguageContext";
 import Navbar             from "./components/Navbar";
 import ScrollProgress     from "./components/ScrollProgress";
 import HomeSection        from "./sections/HomeSection";
@@ -12,26 +12,29 @@ import ProjectsSection    from "./sections/ProjectsSection";
 import GitHubSection      from "./sections/GitHubSection";
 import ContactSection     from "./sections/ContactSection";
 
-const NAV_LINKS = ["Home", "Education", "Experience", "Projects", "GitHub", "Contact Me"];
-
 const SECTION_MAP = {
-  home: "Home", whatido: "Home", education: "Education", credentials: "Education",
-  experience: "Experience", projects: "Projects",
-  github: "GitHub", contact: "Contact Me",
-};
-
-const NAV_ID_MAP = {
-  "Home": "home", "Education": "education", "Experience": "experience",
-  "Projects": "projects", "GitHub": "github", "Contact Me": "contact",
+  home: "home", whatido: "home", education: "education", credentials: "education",
+  experience: "experience", projects: "projects",
+  github: "github", contact: "contact",
 };
 
 export default function App() {
-  const [active, setActive] = useState("Home");
+  const { t } = useLanguage();
+  const [active, setActive] = useState("home");
+
+  const navLinks = [
+    { key: "home",       label: t.nav.home },
+    { key: "education",  label: t.nav.education },
+    { key: "experience", label: t.nav.experience },
+    { key: "projects",   label: t.nav.projects },
+    { key: "github",     label: t.nav.github },
+    { key: "contact",    label: t.nav.contact },
+  ];
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => entries.forEach((e) => {
-        if (e.isIntersecting) setActive(SECTION_MAP[e.target.id] || "Home");
+        if (e.isIntersecting) setActive(SECTION_MAP[e.target.id] || "home");
       }),
       { threshold: 0.3 }
     );
@@ -42,15 +45,15 @@ export default function App() {
     return () => observer.disconnect();
   }, []);
 
-  const handleNav = (link) => {
-    setActive(link);
-    document.getElementById(NAV_ID_MAP[link])?.scrollIntoView({ behavior: "smooth" });
+  const handleNav = (key) => {
+    setActive(key);
+    document.getElementById(key)?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
     <div className="min-h-screen" style={{ background: "var(--color-bg)" }}>
       <ScrollProgress />
-      <Navbar active={active} onNav={handleNav} navLinks={NAV_LINKS} />
+      <Navbar active={active} onNav={handleNav} navLinks={navLinks} />
       <HomeSection />
       <WhatIDoSection />
       <EducationSection />

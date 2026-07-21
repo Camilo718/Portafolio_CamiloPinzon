@@ -55,7 +55,7 @@ export const SKILLS = [
     ],
   },
   {
-    icon: SiFigma, // Based on 🎨
+    icon: SiFigma,
     title: "Design & Data",
     image: "../../public/images/Graficas.png",
     tags: ["Python", "UI Design", "Design Thinking", "Data Analysis"],

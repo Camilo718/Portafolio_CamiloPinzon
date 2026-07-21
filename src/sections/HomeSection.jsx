@@ -1,5 +1,7 @@
-import { PERSONAL, SOCIALS, STATS } from "../data/portfolioData";
+import { PERSONAL, SOCIALS } from "../data/portfolioData";
+import { toast } from "sonner";
 import TypingEffect from "../components/TypingEffect";
+import { useLanguage } from "../context/LanguageContext";
 import AnimatedCounter from "../components/AnimatedCounter";
 import FadeIn from "../components/FadeIn";
 import TechCarousel from "../components/TechCarousel";
@@ -17,21 +19,23 @@ const SOCIAL_ICONS = {
 };
 
 export default function HomeSection() {
+  const { t } = useLanguage();
+
   return (
     <section id="home" style={{ background: "var(--color-bg)" }}>
       <div className="grid grid-cols-2 items-center gap-8 px-10 pt-14 pb-8 min-h-[420px]">
         <FadeIn direction="left">
           <p className="text-sm font-medium tracking-widest mb-2" style={{ color: "var(--color-accent)" }}>
-            HOLA, SOY
+            {t.hero.greeting}
           </p>
           <h1 className="text-5xl font-semibold leading-tight mb-3" style={{ color: "var(--color-navy)" }}>
             {PERSONAL.name}
           </h1>
           <p className="text-lg mb-4 min-h-[28px]" style={{ color: "var(--color-muted)" }}>
-            <TypingEffect />
+            <TypingEffect words={t.hero.typingWords} />
           </p>
           <p className="text-sm leading-relaxed max-w-md mb-6" style={{ color: "var(--color-light)" }}>
-            {PERSONAL.bio}
+            {t.hero.bio}
           </p>
 
           <div className="flex gap-2.5 mb-6">
@@ -59,10 +63,10 @@ export default function HomeSection() {
               onMouseLeave={(e) => e.currentTarget.style.background = "var(--color-navy)"}
               onClick={() => {
                 document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
-                toast.info("¡Revisa mis proyectos!", { description: "Bajando a la sección" });
+                toast.info(t.contact.toastProjects.title, { description: t.contact.toastProjects.description });
               }}
             >
-              <Eye size={15} /> {PERSONAL.ctaLabel}
+              <Eye size={15} /> {t.hero.cta}
             </button>
             <a
               href={PERSONAL.cvFile} download
@@ -71,9 +75,9 @@ export default function HomeSection() {
               style={{ color: "var(--color-navy)", borderColor: "var(--color-navy)" }}
               onMouseEnter={(e) => { e.currentTarget.style.background = "var(--color-navy)"; e.currentTarget.style.color = "#fff"; }}
               onMouseLeave={(e) => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = "var(--color-navy)"; }}
-              onClick={() => toast.success("Descargando CV", { description: "El archivo se guardará en tus descargas" })}
+              onClick={() => toast.success(t.contact.toastCV.title, { description: t.contact.toastCV.description })}
             >
-              <Download size={15} /> Descargar CV
+              <Download size={15} /> {t.hero.cvButton}
             </a>
           </div>
         </FadeIn>
@@ -86,7 +90,7 @@ export default function HomeSection() {
       </div>
 
       <div className="grid grid-cols-4 gap-4 px-10 pb-6">
-        {STATS.map((stat, i) => (
+        {t.stats.map((stat, i) => (
           <FadeIn key={stat.label} delay={i * 80}>
             <div className="rounded-2xl border p-5 text-center shadow-sm"
               style={{ background: "var(--color-bg-card)", borderColor: "var(--color-tag-bg)" }}>
@@ -98,7 +102,8 @@ export default function HomeSection() {
           </FadeIn>
         ))}
       </div>
-      <TechCarousel />
+
+      <TechCarousel label={t.techCarouselLabel} />
     </section>
   );
 }

@@ -1,14 +1,18 @@
 import { useState, useEffect } from "react";
 
-const WORDS = ["Frontend Developer", "React + Vite", "Python Developer", "Data Analyst", "Solution Creator"];
-
-export default function TypingEffect() {
+export default function TypingEffect({ words }) {
   const [wordIndex, setWordIndex] = useState(0);
   const [displayed, setDisplayed] = useState("");
   const [deleting, setDeleting] = useState(false);
 
   useEffect(() => {
-    const current = WORDS[wordIndex];
+    setWordIndex(0);
+    setDisplayed("");
+    setDeleting(false);
+  }, [words]);
+
+  useEffect(() => {
+    const current = words[wordIndex % words.length];
     let timeout;
     if (!deleting && displayed.length < current.length)
       timeout = setTimeout(() => setDisplayed(current.slice(0, displayed.length + 1)), 80);
@@ -16,9 +20,9 @@ export default function TypingEffect() {
       timeout = setTimeout(() => setDeleting(true), 1800);
     else if (deleting && displayed.length > 0)
       timeout = setTimeout(() => setDisplayed(current.slice(0, displayed.length - 1)), 45);
-    else { setDeleting(false); setWordIndex((i) => (i + 1) % WORDS.length); }
+    else { setDeleting(false); setWordIndex((i) => (i + 1) % words.length); }
     return () => clearTimeout(timeout);
-  }, [displayed, deleting, wordIndex]);
+  }, [displayed, deleting, wordIndex, words]);
 
   return (
     <span style={{ color: "var(--color-accent)", fontWeight: 500 }}>

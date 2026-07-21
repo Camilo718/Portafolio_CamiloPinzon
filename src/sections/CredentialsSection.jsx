@@ -1,47 +1,44 @@
 import { SectionTitle, SectionDivider } from "../components/SectionTitle";
 import { IBM_CREDENTIALS } from "../data/portfolioData";
+import { useLanguage } from "../context/LanguageContext";
 import FadeIn from "../components/FadeIn";
 import { ExternalLink, CheckCircle2 } from "lucide-react";
 
 export default function CredentialsSection() {
+  const { t } = useLanguage();
+
   return (
     <section id="credentials" className="px-10 py-16" style={{ background: "var(--color-bg-alt)" }}>
-      <SectionTitle>Credenciales Digitales</SectionTitle>
+      <SectionTitle>{t.credentials.title}</SectionTitle>
       <SectionDivider />
 
       <FadeIn>
         <p className="text-center text-sm max-w-lg mx-auto mb-10 leading-relaxed"
           style={{ color: "var(--color-light)" }}>
-          7 credenciales certificadas por <strong style={{ color: "var(--color-navy)" }}>IBM SkillsBuild</strong>,
-          verificables públicamente en Credly.
+          {t.credentials.description.split("**").map((part, i) =>
+            i % 2 === 1 ? <strong key={i} style={{ color: "var(--color-navy)" }}>{part}</strong> : part
+          )}
         </p>
       </FadeIn>
 
       <div className="grid grid-cols-4 gap-4">
         {IBM_CREDENTIALS.map((cred, i) => (
           <FadeIn key={cred.name} delay={i * 60} direction="up">
-            <a
-              href={cred.url}
-              target="_blank"
-              rel="noreferrer"
+            <a href={cred.url} target="_blank" rel="noreferrer"
               className="group rounded-2xl border p-5 h-full flex flex-col items-center gap-3 shadow-sm
                          transition-all duration-200 hover:-translate-y-1 hover:shadow-lg cursor-pointer"
-              style={{ background: "var(--color-bg-card)", borderColor: "var(--color-tag-bg)" }}
-            >
-              {/* Badge oficial de IBM/Credly */}
-              <div className="w-64 h-34 flex items-center justify-center">
-                <img
-                  src={cred.image}
-                  alt={cred.name}
+              style={{ background: "var(--color-bg-card)", borderColor: "var(--color-tag-bg)" }}>
+
+              <div className="w-24 h-24 flex items-center justify-center">
+                <img src={cred.image} alt={cred.name}
                   className="max-w-full max-h-full object-contain transition-transform duration-300 group-hover:scale-105"
-                  loading="lazy"
-                />
+                  loading="lazy" />
               </div>
 
               <div className="text-center w-full">
                 <p className="text-[10px] font-medium uppercase tracking-wide mb-1"
                   style={{ color: "var(--color-accent)" }}>
-                  Credencial digital
+                  {t.credentials.badgeLabel}
                 </p>
                 <h4 className="text-xs font-semibold leading-snug mb-2 min-h-[32px]"
                   style={{ color: "var(--color-navy)" }}>
@@ -50,14 +47,14 @@ export default function CredentialsSection() {
                 <div className="flex items-center justify-center gap-1">
                   <CheckCircle2 size={12} className="text-green-600" />
                   <p className="text-[11px]" style={{ color: "var(--color-faint)" }}>
-                    Emitida {cred.issued}
+                    {t.credentials.issuedLabel} {cred.issued}
                   </p>
                 </div>
               </div>
 
               <div className="flex items-center gap-1 text-[11px] opacity-0 group-hover:opacity-100 transition-opacity duration-200"
                 style={{ color: "var(--color-accent)" }}>
-                Verificar en Credly <ExternalLink size={10} />
+                {t.credentials.verifyLabel} <ExternalLink size={10} />
               </div>
             </a>
           </FadeIn>
