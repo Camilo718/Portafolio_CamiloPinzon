@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const WORDS = ["Frontend Developer", "React + Vite", "Python Developer", "Analista de Datos", "Creador de soluciones"];
+const WORDS = ["Frontend Developer", "React + Vite", "Python Developer", "Data Analyst", "Solution Creator"];
 
 export default function TypingEffect() {
   const [wordIndex, setWordIndex] = useState(0);
