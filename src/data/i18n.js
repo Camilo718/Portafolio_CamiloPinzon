@@ -13,7 +13,7 @@ export const translations = {
     },
     hero: {
       greeting: "HOLA, SOY",
-      bio: "Soy una persona organizada y responsable, con habilidades en Design Thinking, programación Frontend y análisis de datos. Me destaco por mi integridad, trabajo en equipo y disposición para crear soluciones innovadoras.",
+      bio: "Soy una persona organizada y responsable, con habilidades en Design Thinking, programación Frontend y análisis de datos. Me destaco por mi integridad, trabajo en equipo y mi pasión por desarrollar productos de principio a fin, creando soluciones innovadoras.",
       cta: "Ver mis proyectos",
       cvButton: "Descargar CV",
       typingWords: ["Frontend Developer", "React + Vite", "Python Developer", "Analista de Datos", "Creador de soluciones"],
@@ -99,7 +99,7 @@ export const translations = {
     projects: {
       title: "Proyectos",
       description: "Proyectos desarrollados con diversas tecnologías, desde Frontend con React hasta análisis de datos con Python.",
-      filters: ["Todos", "React", "Python", "UI/UX", "JavaScript", "TypeScript"],
+      filters: ["Todos", "React", "Python", "UI/UX", "JavaScript", "Análisis de Procesos"],
       viewMore: "Click para ver más →",
       viewProject: "Ver proyecto →",
       close: "Cerrar",
@@ -142,6 +142,25 @@ export const translations = {
       whatsappMessage: "Hola Camilo 👋, vi tu portafolio y me gustaría contactarte.",
     },
     techCarouselLabel: "Technologies I work with",
+    diagrams: {
+      title: "Documentación & Análisis de Procesos",
+      subtitle: "Diagramas de flujo funcionales",
+      description: "Durante mi etapa productiva del SENA participé en el análisis funcional del sistema de nómina (Payroll) de **OneTouchDirect**, documentando la lógica de negocio de 7 roles distintos mediante Lucidchart: permisos, aprobaciones jerárquicas, flujos de revocación y consumo de API (GET/POST/PUT). También diseñé el flujo completo de un **sistema de tickets de soporte** como proyecto propio.",
+      viewFull: "Ver diagrama completo",
+      downloadPdf: "Descargar informe PDF",
+      toolLabel: "Herramienta",
+      dateLabel: "Fecha",
+      items: [
+        { id: "site-director", role: "Site-Director", date: "Jun 18, 2026", summary: "Máxima autoridad operativa de la cuenta. Aprueba/revoca solicitudes de todo el personal, gestiona costos operativos, prenómina y horas extra." },
+        { id: "supervisor-agent", role: "Supervisor & Agent", date: "Jun 18, 2026", summary: "Seguimiento de equipo, visualización de asistencia y solicitudes de tiempo off del agente con flujo de aprobación jerárquica." },
+        { id: "coordinador", role: "Coordinador", date: "Jun 18, 2026", summary: "Aprobaciones de permisos junto al Workforce Analyst, asignación de tareas, validación de horas y visibilidad de contactos del equipo." },
+        { id: "qa", role: "QA Lead & Analyst", date: "Jun 18, 2026", summary: "Aprobación de tiempo libre para QA, corrección de ausencias con límite de 20 días y gestión de actividades del equipo." },
+        { id: "training", role: "Training (Director/Trainer/Agent)", date: "Jun 18, 2026", summary: "Flujo de formación con evaluación de practicantes, ascenso a Agente y aprobación de licencias por jerarquía." },
+        { id: "wf-analyst-rta", role: "Workforce Analyst & RTA", date: "Jun 25, 2026", summary: "Gestión de horarios, ausencias y prenómina con primer nivel de validación antes de escalar al Workforce Manager." },
+        { id: "workforce-director", role: "Workforce Director", date: "Jun 18, 2026", summary: "Máximo nivel de aprobación en la vertical de Workforce. Gestión CRUD de horarios y prenómina consolidada." },
+        { id: "tickets", role: "Sistema de Tickets de Soporte", date: "Proyecto propio", summary: "Flujo completo de gestión de tickets: creación por el operador, triage y resolución por el administrador, con estados Pendiente → En Proceso → Resuelto y notificaciones al usuario." },
+      ],
+    },
   },
 
   en: {
@@ -155,7 +174,7 @@ export const translations = {
     },
     hero: {
       greeting: "HI, I'M",
-      bio: "I'm an organized and responsible person with skills in Design Thinking, Frontend development, and data analysis. I stand out for my integrity, teamwork, and willingness to create innovative solutions.",
+      bio: "I am an organized and responsible person with skills in Design Thinking, Frontend development, and data analysis. I stand out for my integrity, teamwork, and my passion for developing products from start to finish, creating innovative solutions.",
       cta: "View my projects",
       cvButton: "Download CV",
       typingWords: ["Frontend Developer", "React + Vite", "Python Developer", "Data Analyst", "Solutions Creator"],
@@ -241,7 +260,7 @@ export const translations = {
     projects: {
       title: "Projects",
       description: "Projects built with a variety of technologies, from Frontend with React to data analysis with Python.",
-      filters: ["All", "React", "Python", "UI/UX", "JavaScript", "TypeScript"],
+      filters: ["All", "React", "Python", "UI/UX", "JavaScript", "Process Analysis"],
       viewMore: "Click to see more →",
       viewProject: "View project →",
       close: "Close",
@@ -284,5 +303,24 @@ export const translations = {
       whatsappMessage: "Hi Camilo 👋, I saw your portfolio and would like to get in touch.",
     },
     techCarouselLabel: "Technologies I work with",
+    diagrams: {
+      title: "Documentation & Process Analysis",
+      subtitle: "Functional flow diagrams",
+      description: "During my SENA productive stage I took part in the functional analysis of **OneTouchDirect's** Payroll system, documenting the business logic of 7 different roles using Lucidchart: permissions, hierarchical approvals, revocation flows, and API consumption (GET/POST/PUT). I also designed the full flow for a **support ticket system** as a personal project.",
+      viewFull: "View full diagram",
+      downloadPdf: "Download PDF report",
+      toolLabel: "Tool",
+      dateLabel: "Date",
+      items: [
+        { id: "site-director", role: "Site-Director", date: "Jun 18, 2026", summary: "Highest operational authority on the account. Approves/revokes requests from all staff, manages operating costs, pre-payroll, and overtime." },
+        { id: "supervisor-agent", role: "Supervisor & Agent", date: "Jun 18, 2026", summary: "Team follow-up, attendance viewing, and time-off requests from the agent with a hierarchical approval flow." },
+        { id: "coordinador", role: "Coordinator", date: "Jun 18, 2026", summary: "Approves permissions alongside the Workforce Analyst, assigns tasks, validates hours, and has visibility of the team's contacts." },
+        { id: "qa", role: "QA Lead & Analyst", date: "Jun 18, 2026", summary: "Approves QA time off, corrects absences within a 20-day limit, and manages team activities." },
+        { id: "training", role: "Training (Director/Trainer/Agent)", date: "Jun 18, 2026", summary: "Training flow with trainee evaluation, promotion to Agent, and license approval by hierarchy." },
+        { id: "wf-analyst-rta", role: "Workforce Analyst & RTA", date: "Jun 25, 2026", summary: "Manages schedules, absences, and pre-payroll as the first validation level before escalating to the Workforce Manager." },
+        { id: "workforce-director", role: "Workforce Director", date: "Jun 18, 2026", summary: "Highest approval level in the Workforce vertical. CRUD schedule management and consolidated pre-payroll." },
+        { id: "tickets", role: "Support Ticket System", date: "Personal project", summary: "Complete ticket management flow: creation by the operator, triage and resolution by the administrator, with Pending → In Progress → Resolved states and user notifications." },
+      ],
+    },
   },
 };
