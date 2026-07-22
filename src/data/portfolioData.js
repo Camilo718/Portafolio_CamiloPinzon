@@ -21,7 +21,7 @@ export const PERSONAL = {
   email:    "camiloandrespinzonmelendrez@gmail.com",
   phone:    "315-8094-952",
   location: "Carrera 87#131-06",
-  cvFile:   "/cv.pdf",
+  cvFile:   "/public/Camilo_Pinzon_CV_2026.docx.pdf",
 };
 
 export const NAV_LINKS = ["Home", "Education", "Experience", "Projects", "Contact Me"];
