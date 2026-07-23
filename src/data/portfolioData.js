@@ -131,28 +131,28 @@ export const PROJECTS = [
     link: "#",
   },
   {
-    icon: SiPython, // Based on 🐍
+    icon: SiPython,
     title: "Python Data Analysis",
     description: "Data analysis and visualization project using Python.",
     tags: ["Python", "Data", "Analysis"],
     link: "#",
   },
   {
-    icon: SiFigma, // Based on 🎨
+    icon: SiFigma, 
     title: "UI/UX Design",
     description: "Interface design proposal applying Design Thinking and UX principles.",
     tags: ["Design Thinking", "UI", "UX"],
     link: "#",
   },
   {
-    icon: SiShopify, // Based on 🛒 (Management/Inventory System)
+    icon: SiShopify, 
     title: "Inventory Management",
     description: "A basic inventory management system developed during my technical software training.",
     tags: ["JavaScript", "Logic", "SENA"],
     link: "#",
   },
   {
-    icon: SiGrafana, // Based on 📊 (Analytical Dashboard / Metrics)
+    icon: SiGrafana, 
     title: "Analytical Dashboard",
     description: "Metrics visualization dashboard built with reusable React components.",
     tags: ["React", "TypeScript", "Charts"],
