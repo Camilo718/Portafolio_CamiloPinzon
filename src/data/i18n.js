@@ -43,7 +43,7 @@ export const translations = {
       typingWords: ["Frontend Developer", "React + Vite", "Python Developer", "Analista de Datos", "Creador de soluciones"],
     },
     stats: [
-      { value: 6,  suffix: " meses", label: "En prácticas Frontend" },
+      { value: 6,  suffix: " meses", label: "En prácticas" },
       { value: 7,  suffix: "",       label: "Credenciales IBM" },
       { value: 10, suffix: "+",      label: "Tecnologías" },
       { value: 3,  suffix: "+",      label: "Años estudiando" },
