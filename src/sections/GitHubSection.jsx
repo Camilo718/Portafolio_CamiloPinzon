@@ -43,7 +43,7 @@ export default function GitHubSection() {
   }, []);
 
   return (
-    <section id="github" className="px-10 py-16" style={{ background: "var(--color-bg-alt)" }}>
+    <section id="github" className="px-4 sm:px-6 md:px-10 py-12 md:py-16" style={{ background: "var(--color-bg-alt)" }}>
       <SectionTitle>{t.github.title}</SectionTitle>
       <SectionDivider />
 
@@ -62,32 +62,32 @@ export default function GitHubSection() {
       {!loading && !error && (
         <>
           <FadeIn direction="up">
-            <div className="flex items-center gap-6 rounded-2xl border p-6 mb-8 shadow-sm"
+            <div className="flex flex-col sm:flex-row items-center sm:items-center gap-4 md:gap-6 rounded-2xl border p-5 md:p-6 mb-8 shadow-sm text-center sm:text-left"
               style={{ background: "var(--color-bg-card)", borderColor: "var(--color-tag-bg)" }}>
               <img src={stats.avatar} alt="GitHub avatar"
-                className="w-16 h-16 rounded-full border-2" style={{ borderColor: "var(--color-accent)" }} />
-              <div className="flex-1">
-                <h3 className="text-base font-semibold mb-0.5" style={{ color: "var(--color-navy)" }}>
+                className="w-14 h-14 md:w-16 md:h-16 rounded-full border-2 shrink-0" style={{ borderColor: "var(--color-accent)" }} />
+              <div className="flex-1 min-w-0">
+                <h3 className="text-sm md:text-base font-semibold mb-0.5" style={{ color: "var(--color-navy)" }}>
                   @{GITHUB_USER}
                 </h3>
                 {stats.bio && (
-                  <p className="text-sm mb-2" style={{ color: "var(--color-light)" }}>{stats.bio}</p>
+                  <p className="text-xs md:text-sm mb-2" style={{ color: "var(--color-light)" }}>{stats.bio}</p>
                 )}
-                <div className="flex gap-5">
+                <div className="flex gap-4 md:gap-5 justify-center sm:justify-start">
                   {[
                     { label: t.github.repos,     value: stats.repos },
                     { label: t.github.followers, value: stats.followers },
                     { label: t.github.following, value: stats.following },
                   ].map((s) => (
                     <div key={s.label} className="text-center">
-                      <p className="text-lg font-bold" style={{ color: "var(--color-navy)" }}>{s.value}</p>
-                      <p className="text-xs" style={{ color: "var(--color-muted)" }}>{s.label}</p>
+                      <p className="text-base md:text-lg font-bold" style={{ color: "var(--color-navy)" }}>{s.value}</p>
+                      <p className="text-[11px] md:text-xs" style={{ color: "var(--color-muted)" }}>{s.label}</p>
                     </div>
                   ))}
                 </div>
               </div>
               <a href={`https://github.com/${GITHUB_USER}`} target="_blank" rel="noreferrer"
-                className="px-5 py-2.5 rounded-xl text-sm font-medium text-white shrink-0 transition-colors duration-200"
+                className="px-5 py-2.5 rounded-xl text-sm font-medium text-white shrink-0 transition-colors duration-200 w-full sm:w-auto"
                 style={{ background: "var(--color-navy)" }}
                 onMouseEnter={(e) => e.currentTarget.style.background = "var(--color-navy-light)"}
                 onMouseLeave={(e) => e.currentTarget.style.background = "var(--color-navy)"}>
@@ -96,7 +96,7 @@ export default function GitHubSection() {
             </div>
           </FadeIn>
 
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
             {repos.map((repo, i) => (
               <FadeIn key={repo.id} delay={i * 60} direction="up">
                 <a href={repo.html_url} target="_blank" rel="noreferrer"

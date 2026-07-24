@@ -59,21 +59,21 @@ export default function ContactSection() {
   const inputClass = "w-full px-4 py-2.5 rounded-xl text-sm border outline-none transition-colors duration-200";
 
   return (
-    <section id="contact" className="px-10 py-16" style={{ background: "var(--color-bg)" }}>
+    <section id="contact" className="px-4 sm:px-6 md:px-10 py-12 md:py-16" style={{ background: "var(--color-bg)" }}>
       <SectionTitle>{t.contact.title}</SectionTitle>
       <SectionDivider />
 
-      <div className="grid grid-cols-2 items-center gap-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8 md:gap-12">
         <FadeIn direction="left">
-          <img src="../../public/images/Messange.png" alt="Contact" className="max-w-[760px] w-full object-cover mx-auto" />
+          <img src="/images/Messange.png" alt="Contact" className="max-w-[240px] sm:max-w-[300px] md:max-w-[360px] w-full object-contain mx-auto" />
         </FadeIn>
 
         <FadeIn direction="right" delay={100}>
           {status === "sent" ? (
-            <div className="rounded-2xl border p-10 text-center shadow-sm"
+            <div className="rounded-2xl border p-8 md:p-10 text-center shadow-sm"
               style={{ background: "var(--color-bg-card)", borderColor: "var(--color-tag-bg)" }}>
               <div className="text-5xl mb-4">✅</div>
-              <h3 className="text-xl font-medium mb-2" style={{ color: "var(--color-navy)" }}>
+              <h3 className="text-lg md:text-xl font-medium mb-2" style={{ color: "var(--color-navy)" }}>
                 {t.contact.sentTitle}
               </h3>
               <p className="text-sm mb-5" style={{ color: "var(--color-light)" }}>
@@ -86,7 +86,7 @@ export default function ContactSection() {
               </button>
             </div>
           ) : (
-            <div className="rounded-2xl border p-7 flex flex-col gap-4 shadow-sm"
+            <div className="rounded-2xl border p-5 md:p-7 flex flex-col gap-4 shadow-sm"
               style={{ background: "var(--color-bg-card)", borderColor: "var(--color-tag-bg)" }}>
 
               <input type="text" name="name" placeholder={t.contact.namePlaceholder}
@@ -123,7 +123,7 @@ export default function ContactSection() {
                 </button>
               </div>
 
-              <div className="flex justify-center gap-3 pt-1">
+              <div className="flex justify-center gap-3 pt-1 flex-wrap">
                 {SOCIALS.map((s) => {
                   const si = SOCIAL_ICONS[s.label];
                   if (!si) return null;

@@ -1,4 +1,3 @@
-import React from "react";
 import { SectionTitle, SectionDivider } from "../components/SectionTitle";
 import { useLanguage } from "../context/LanguageContext";
 import FadeIn from "../components/FadeIn";
@@ -7,47 +6,50 @@ export default function ExperienceSection() {
   const { t } = useLanguage();
 
   return (
-    <section id="experience" className="px-10 py-16" style={{ background: "var(--color-bg)" }}>
+    <section id="experience" className="px-4 sm:px-6 md:px-10 py-12 md:py-16" style={{ background: "var(--color-bg)" }}>
       <SectionTitle>{t.experience.title}</SectionTitle>
       <SectionDivider />
 
-      <div className="grid grid-cols-[1fr_2fr] items-start gap-12">
+      <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr] items-start gap-8 md:gap-12">
         <FadeIn direction="left">
-          <div className="flex justify-center pt-4">
-             <img src="../../public/images/Experience.png" alt="Experience" className="max-w-[380px] w-full object-contain" />
+          <div className="flex justify-center pt-0 md:pt-4">
+            <img src="/images/Experience.png" alt="Experience" className="max-w-[200px] sm:max-w-[240px] md:max-w-[280px] w-full object-contain" />
           </div>
         </FadeIn>
 
         <div className="relative">
           <div className="absolute left-5 top-0 bottom-0 w-0.5" style={{ background: "var(--color-tag-bg)" }} />
-          <div className="flex flex-col gap-7">
-            {t.experience.items.map((exp, i) => (
-              <FadeIn key={exp.role} delay={i * 100} direction="right">
-                <div className="flex gap-6 items-start">
-                  <div className="min-w-[40px] h-10 rounded-full flex items-center justify-center
-                                  text-lg text-white z-10 shrink-0"
-                    style={{ background: "var(--color-navy)", boxShadow: "0 0 0 4px var(--color-bg)" }}>
-                    {React.createElement(exp.logo, { size: 20 })}
-                  </div>
+          <div className="flex flex-col gap-6 md:gap-7">
+            {t.experience.items.map((exp, i) => {
+              const LogoIcon = exp.logo;
+              return (
+                <FadeIn key={exp.role} delay={i * 100} direction="right">
+                  <div className="flex gap-4 md:gap-6 items-start">
+                    <div className="min-w-[36px] w-9 h-9 md:min-w-[40px] md:w-10 md:h-10 rounded-full flex items-center justify-center
+                                    text-white z-10 shrink-0"
+                      style={{ background: "var(--color-navy)", boxShadow: "0 0 0 4px var(--color-bg)" }}>
+                      {LogoIcon && <LogoIcon size={16} />}
+                    </div>
 
-                  <div className="rounded-2xl border p-5 flex-1 shadow-sm
-                                  transition-transform duration-200 hover:-translate-y-1"
-                    style={{ background: "var(--color-bg-card)", borderColor: "var(--color-tag-bg)" }}>
-                    <div className="flex justify-between flex-wrap gap-1 mb-1">
-                      <h4 className="text-sm font-semibold" style={{ color: "var(--color-navy)" }}>{exp.role}</h4>
-                      <span className="text-xs" style={{ color: "var(--color-faint)" }}>{exp.period}</span>
+                    <div className="rounded-2xl border p-4 md:p-5 flex-1 shadow-sm min-w-0
+                                    transition-transform duration-200 hover:-translate-y-1"
+                      style={{ background: "var(--color-bg-card)", borderColor: "var(--color-tag-bg)" }}>
+                      <div className="flex flex-col sm:flex-row sm:justify-between gap-1 mb-1">
+                        <h4 className="text-sm font-semibold" style={{ color: "var(--color-navy)" }}>{exp.role}</h4>
+                        <span className="text-xs shrink-0" style={{ color: "var(--color-faint)" }}>{exp.period}</span>
+                      </div>
+                      <div className="flex flex-col sm:flex-row sm:justify-between gap-0.5 mb-2">
+                        <p className="text-xs font-medium" style={{ color: "var(--color-muted)" }}>{exp.company}</p>
+                        <p className="text-xs" style={{ color: "var(--color-faint)" }}>{exp.location}</p>
+                      </div>
+                      <p className="text-xs leading-relaxed" style={{ color: "var(--color-light)" }}>
+                        {exp.description}
+                      </p>
                     </div>
-                    <div className="flex justify-between flex-wrap mb-2">
-                      <p className="text-xs font-medium" style={{ color: "var(--color-muted)" }}>{exp.company}</p>
-                      <p className="text-xs" style={{ color: "var(--color-faint)" }}>{exp.location}</p>
-                    </div>
-                    <p className="text-xs leading-relaxed" style={{ color: "var(--color-light)" }}>
-                      {exp.description}
-                    </p>
                   </div>
-                </div>
-              </FadeIn>
-            ))}
+                </FadeIn>
+              );
+            })}
           </div>
         </div>
       </div>

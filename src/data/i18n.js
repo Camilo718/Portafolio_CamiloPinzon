@@ -1,6 +1,30 @@
 import { SiReact, SiFigma, SiPython, SiVite, SiGrafana } from "react-icons/si";
 import { FiPackage, FiShoppingCart } from "react-icons/fi";
+import {
+  Atom,          // React
+  Palmtree,      // Figma (diseño)
+  Code,          // Python → no hay "Snake", usamos Code o Terminal
+  Zap,           // Vite (rápido)
+  Activity,      // Grafana (métricas)
+  FileCode,      // JavaScript
+  Braces,        // TypeScript
+  Wind,          // Tailwind
+  Database,      // MariaDB
+  Palette,       // CSS
+} from "lucide-react";
 
+export const TECH_ICON_MAP = {
+  React:      { Icon: Atom,      color: "#61DAFB" },
+  Figma:      { Icon: Palmtree,  color: "#F24E1E" },
+  Vite:       { Icon: Zap,       color: "#646CFF" },
+  Python:     { Icon: Code,      color: "#3572A5" }, // o Terminal
+  JavaScript: { Icon: FileCode,  color: "#F7DF1E" },
+  TypeScript: { Icon: Braces,    color: "#3178C6" },
+  Tailwind:   { Icon: Wind,      color: "#38BDF8" },
+  MariaDB:    { Icon: Database,  color: "#003545" },
+  CSS:        { Icon: Palette,   color: "#563D7C" },
+  Grafana:    { Icon: Activity,  color: "#F46800" },
+};
 export const translations = {
   es: {
     nav: {

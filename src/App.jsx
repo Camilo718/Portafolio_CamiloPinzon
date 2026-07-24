@@ -51,7 +51,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen" style={{ background: "var(--color-bg)" }}>
+    <div className="min-h-screen overflow-x-hidden" style={{ background: "var(--color-bg)" }}>
       <ScrollProgress />
       <Navbar active={active} onNav={handleNav} navLinks={navLinks} />
       <HomeSection />
