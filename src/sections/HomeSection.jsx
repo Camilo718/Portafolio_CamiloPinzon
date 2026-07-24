@@ -84,7 +84,7 @@ export default function HomeSection() {
 
         <FadeIn direction="right" delay={150}>
           <div className="flex justify-center">
-            <img src="/images/home.png" alt="Hero" className="max-w-[260px] sm:max-w-[340px] md:max-w-[420px] w-full object-contain" />
+            <img src="/images/home.png" alt="Hero" className="max-w-[260px] sm:max-w-[340px] md:max-w-[520px] w-full object-contain" />
           </div>
         </FadeIn>
       </div>

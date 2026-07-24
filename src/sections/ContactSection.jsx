@@ -65,7 +65,7 @@ export default function ContactSection() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8 md:gap-12">
         <FadeIn direction="left">
-          <img src="/images/Messange.png" alt="Contact" className="max-w-[240px] sm:max-w-[300px] md:max-w-[360px] w-full object-contain mx-auto" />
+          <img src="/images/Messange.png" alt="Contact" className="max-w-[240px] sm:max-w-[300px] md:max-w-[660px] w-full object-contain mx-auto" />
         </FadeIn>
 
         <FadeIn direction="right" delay={100}>

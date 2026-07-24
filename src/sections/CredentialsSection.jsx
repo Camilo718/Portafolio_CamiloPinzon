@@ -29,7 +29,7 @@ export default function CredentialsSection() {
                          transition-all duration-200 hover:-translate-y-1 hover:shadow-lg cursor-pointer"
               style={{ background: "var(--color-bg-card)", borderColor: "var(--color-tag-bg)" }}>
 
-              <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 flex items-center justify-center">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-50 md:h-24 flex items-center justify-center">
                 <img src={cred.image} alt={cred.name}
                   className="max-w-full max-h-full object-contain transition-transform duration-300 group-hover:scale-105"
                   loading="lazy" />

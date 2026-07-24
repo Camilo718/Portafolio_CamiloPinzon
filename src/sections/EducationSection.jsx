@@ -13,7 +13,7 @@ export default function EducationSection() {
       <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr] items-center gap-8 md:gap-12">
         <FadeIn direction="left">
           <div className="flex justify-center">
-            <img src="../../images/educaciones.png" alt="Education" className="max-w-[200px] sm:max-w-[240px] md:max-w-[280px] w-full object-contain" />
+            <img src="../../images/educaciones.png" alt="Education" className="max-w-[200px] sm:max-w-[240px] md:max-w-[380px] w-full object-contain" />
           </div>
         </FadeIn>
 

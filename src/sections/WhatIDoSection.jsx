@@ -17,7 +17,7 @@ export default function WhatIDoSection() {
             <div key={skill.title} className="grid grid-cols-1 md:grid-cols-2 items-center gap-8 md:gap-12">
               <FadeIn direction={i % 2 === 0 ? "left" : "right"}>
                 <div className={`flex justify-center ${i % 2 !== 0 ? "md:order-last" : ""}`}>
-                  <img src={skill.image} alt={skill.title} className="max-w-[240px] sm:max-w-[280px] md:max-w-[340px] w-full object-contain" />
+                  <img src={skill.image} alt={skill.title} className="max-w-[240px] sm:max-w-[280px] md:max-w-[420px] w-full object-contain" />
                 </div>
               </FadeIn>
 

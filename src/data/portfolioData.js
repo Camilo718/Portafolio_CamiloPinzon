@@ -14,7 +14,7 @@ export const PERSONAL = {
 
 export const SOCIALS = [
   { label: "GitHub",   icon: SiGithub, href: "https://github.com/Camilo718" },   
-  { label: "LinkedIn", icon: HiOutlineBriefcase, href: "#" }, 
+  { label: "LinkedIn", icon: HiOutlineBriefcase, href: "https://www.linkedin.com/in/camilo-andres-pinzon-melendrez-27a7b3319/" }, 
   { label: "Twitter",  icon: SiX, href: "#" },        
   { label: "Email",    icon: SiGmail, href: `mailto:camiloandrespinzonmelendrez@gmail.com` }, 
   { label: "WhatsApp", icon: SiWhatsapp, href: "https://wa.me/573158094952" },
