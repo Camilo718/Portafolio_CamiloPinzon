@@ -9,6 +9,7 @@ import { SiGithub, SiX, SiDribbble } from "react-icons/si";
 import { FaLinkedin } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { Download, Eye } from "lucide-react";
+import HomeDevelop from "../../public/Images/home.png"
 
 const SOCIAL_ICONS = {
   GitHub:   { Icon: SiGithub,   color: "#181717" },
@@ -84,7 +85,7 @@ export default function HomeSection() {
 
         <FadeIn direction="right" delay={150}>
           <div className="flex justify-center">
-            <img src="/images/home.png" alt="Hero" className="max-w-[260px] sm:max-w-[340px] md:max-w-[520px] w-full object-contain" />
+            <img src={HomeDevelop} alt="Hero" className="max-w-[260px] sm:max-w-[340px] md:max-w-[520px] w-full object-contain" />
           </div>
         </FadeIn>
       </div>

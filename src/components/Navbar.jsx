@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useLanguage } from "../context/LanguageContext";
 import { Menu, X } from "lucide-react";
+import Firma from "../../public/Images/Firma.png";
 
 export default function Navbar({ active, onNav, navLinks }) {
   const { lang, toggleLang } = useLanguage();
@@ -24,7 +25,7 @@ export default function Navbar({ active, onNav, navLinks }) {
       >
         <span className="font-mono text-xs sm:text-sm" style={{ color: "var(--color-accent)" }}>{"<"}</span>
         <img
-          src="/images/Firma.png"
+          src={Firma}
           alt="Firma de Camilo Pinzón"
           className="h-9 sm:h-8 md:h-10 w-auto object-contain"
           style={{ filter: "brightness(0) saturate(100%) invert(13%) sepia(28%) saturate(2400%) hue-rotate(200deg) brightness(90%)" }}

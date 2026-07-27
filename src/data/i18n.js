@@ -1,4 +1,6 @@
 import { SiReact, SiFigma, SiPython, SiVite, SiGrafana } from "react-icons/si";
+import Develop from "../../public/Images/Develop.png";
+import Graficas from "../../public/Images/Graficas.png";
 import { FiPackage, FiShoppingCart } from "react-icons/fi";
 import {
   Atom,          // React
@@ -54,7 +56,7 @@ export const translations = {
         {
           icon: SiReact, // Contexto: Desarrollo Frontend
           title: "Desarrollo Frontend",
-          image: "/Images/Develop.png",
+          image: Develop, 
           tags: ["React", "JavaScript", "TypeScript", "HTML/CSS"],
           items: [
             "Desarrollo de interfaces web responsivas y funcionales con React, enfocadas en una buena experiencia de usuario",
@@ -65,7 +67,7 @@ export const translations = {
         {
           icon: SiFigma, // Contexto: Diseño UI
           title: "Diseño & Datos",
-          image: "/Images/Graficas.png",
+          image: Graficas,
           tags: ["Python", "Diseño UI", "Design Thinking", "Análisis de datos"],
           items: [
             "Pensamiento de diseño aplicado al desarrollo de soluciones innovadoras, funcionales y centradas en el usuario",
@@ -217,7 +219,7 @@ export const translations = {
         {
           icon: SiReact,
           title: "Frontend Development",
-          image: "/Images/Develop.png",
+          image: Develop,
           tags: ["React", "JavaScript", "TypeScript", "HTML/CSS"],
           items: [
             "Development of responsive and functional web interfaces with React, focused on delivering a strong user experience",
@@ -228,7 +230,7 @@ export const translations = {
         {
           icon: SiFigma,
           title: "Design & Data",
-          image: "/Images/Graficas.png",
+          image: Graficas,
           tags: ["Python", "UI Design", "Design Thinking", "Data Analysis"],
           items: [
             "Design thinking applied to the development of innovative, functional, and user-centered solutions",

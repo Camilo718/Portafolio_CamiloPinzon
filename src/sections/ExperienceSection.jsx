@@ -1,6 +1,7 @@
 import { SectionTitle, SectionDivider } from "../components/SectionTitle";
 import { useLanguage } from "../context/LanguageContext";
 import FadeIn from "../components/FadeIn";
+import Experience from "../../public/Images/Experience.png";
 
 export default function ExperienceSection() {
   const { t } = useLanguage();
@@ -13,7 +14,7 @@ export default function ExperienceSection() {
       <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr] items-start gap-8 md:gap-12">
         <FadeIn direction="left">
           <div className="flex justify-center pt-0 md:pt-4">
-            <img src="/images/Experience.png" alt="Experience" className="max-w-[200px] sm:max-w-[240px] md:max-w-[280px] w-full object-contain" />
+            <img src={Experience} alt="Experience" className="max-w-[200px] sm:max-w-[240px] md:max-w-[480px] w-full object-contain" />
           </div>
         </FadeIn>
 

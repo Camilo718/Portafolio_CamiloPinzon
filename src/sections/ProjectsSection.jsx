@@ -4,27 +4,28 @@ import { useLanguage } from "../context/LanguageContext";
 import { TECH_ICON_MAP } from "../data/i18n";
 import FadeIn from "../components/FadeIn";
 import { FileText, Download, X, ExternalLink } from "lucide-react";
+import Proyects from "../../public/Images/Proyects.png"
 
 const IMAGE_MAP = {
-  "site-director":       "/public/Images/diagrams/site-director.png",
-  "supervisor-agent":    "/public/Images/diagrams/supervisor-agent.png",
-  "coordinador":         "/public/Images/diagrams/coordinador.png",
-  "qa":                  "/public/Images/diagrams/qa.png",
-  "training":            "/public/Images/diagrams/training.png",
-  "wf-analyst-rta":      "/public/Images/diagrams/wf-analyst-rta.png",
-  "workforce-director":  "/public/Images/diagrams/workforce-director.png",
-  "tickets":             "/public/Images/diagrams/tickets.png",
+  "site-director":       "/Images/diagrams/site-director.png",
+  "supervisor-agent":    "/Images/diagrams/supervisor-agent.png",
+  "coordinador":         "/Images/diagrams/coordinador.png",
+  "qa":                  "/Images/diagrams/qa.png",
+  "training":            "/Images/diagrams/training.png",
+  "wf-analyst-rta":      "/Images/diagrams/wf-analyst-rta.png",
+  "workforce-director":  "/Images/diagrams/workforce-director.png",
+  "tickets":             "/Images/diagrams/tickets.png",
 };
 
 const PDF_MAP = {
-  "site-director":       "/public/docs/payroll-Diagrams/Site-Director.pdf",
-  "supervisor-agent":    "/public/docs/payroll-Diagrams/Supervisor-Agent.pdf",
-  "coordinador":         "/public/docs/payroll-Diagrams/Coordinador.pdf",
-  "qa":                  "/public/docs/payroll-Diagrams/QA.pdf",
-  "training":            "/public/docs/payroll-Diagrams/Training.pdf",
-  "wf-analyst-rta":      "/public/docs/payroll-Diagrams/WF-Analyst-RTA.pdf",
-  "workforce-director":  "/public/docs/payroll-Diagrams/WorkForce-Director.pdf",
-  "tickets":             "/public/docs/payroll-Diagrams/Tickets-System.pdf",
+  "site-director":       "/docs/payroll-Diagrams/Site-Director.pdf",
+  "supervisor-agent":    "/docs/payroll-Diagrams/Supervisor-Agent.pdf",
+  "coordinador":         "/docs/payroll-Diagrams/Coordinador.pdf",
+  "qa":                  "/docs/payroll-Diagrams/QA.pdf",
+  "training":            "/docs/payroll-Diagrams/Training.pdf",
+  "wf-analyst-rta":      "/docs/payroll-Diagrams/WF-Analyst-RTA.pdf",
+  "workforce-director":  "/docs/payroll-Diagrams/WorkForce-Director.pdf",
+  "tickets":             "/docs/payroll-Diagrams/Tickets-System.pdf",
 };
 
 function TechTag({ tag }) {
@@ -65,7 +66,7 @@ export default function ProjectsSection() {
     <section id="projects" className="px-4 sm:px-6 md:px-10 py-12 md:py-16" style={{ background: "var(--color-bg-alt)" }}>
       <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-6 md:gap-8 mb-8 md:mb-10">
         <FadeIn direction="left">
-          <img src="/images/Proyects.png" alt="Projects" className="max-w-[240px] sm:max-w-[300px] md:max-w-[360px] w-full object-contain mx-auto" />
+          <img src={Proyects} alt="Projects" className="max-w-[240px] sm:max-w-[300px] md:max-w-[360px] w-full object-contain mx-auto" />
         </FadeIn>
         <FadeIn direction="right">
           <SectionTitle>{t.projects.title}</SectionTitle>

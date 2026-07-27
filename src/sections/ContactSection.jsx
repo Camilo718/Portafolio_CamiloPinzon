@@ -7,6 +7,7 @@ import { useLanguage } from "../context/LanguageContext";
 import FadeIn from "../components/FadeIn";
 import { SiGithub, SiX, SiDribbble, SiWhatsapp } from "react-icons/si";
 import { MdEmail } from "react-icons/md";
+import Messange from "../../public/Images/Messange.png";
 
 const SERVICE_ID  = "service_puhce1v";
 const TEMPLATE_ID = "template_ophvzwf";
@@ -65,7 +66,7 @@ export default function ContactSection() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8 md:gap-12">
         <FadeIn direction="left">
-          <img src="/images/Messange.png" alt="Contact" className="max-w-[240px] sm:max-w-[300px] md:max-w-[660px] w-full object-contain mx-auto" />
+          <img src={Messange} alt="Contact" className="max-w-[240px] sm:max-w-[300px] md:max-w-[660px] w-full object-contain mx-auto" />
         </FadeIn>
 
         <FadeIn direction="right" delay={100}>
