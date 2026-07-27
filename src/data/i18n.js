@@ -54,7 +54,7 @@ export const translations = {
         {
           icon: SiReact, // Contexto: Desarrollo Frontend
           title: "Desarrollo Frontend",
-          image: "../../public/Images/Develop.png",
+          image: "/Images/Develop.png",
           tags: ["React", "JavaScript", "TypeScript", "HTML/CSS"],
           items: [
             "Desarrollo de interfaces web responsivas y funcionales con React, enfocadas en una buena experiencia de usuario",
@@ -65,7 +65,7 @@ export const translations = {
         {
           icon: SiFigma, // Contexto: Diseño UI
           title: "Diseño & Datos",
-          image: "../../public/Images/Graficas.png",
+          image: "/Images/Graficas.png",
           tags: ["Python", "Diseño UI", "Design Thinking", "Análisis de datos"],
           items: [
             "Pensamiento de diseño aplicado al desarrollo de soluciones innovadoras, funcionales y centradas en el usuario",
@@ -217,7 +217,7 @@ export const translations = {
         {
           icon: SiReact,
           title: "Frontend Development",
-          image: "../../public/Images/Develop.png",
+          image: "/Images/Develop.png",
           tags: ["React", "JavaScript", "TypeScript", "HTML/CSS"],
           items: [
             "Development of responsive and functional web interfaces with React, focused on delivering a strong user experience",
@@ -228,7 +228,7 @@ export const translations = {
         {
           icon: SiFigma,
           title: "Design & Data",
-          image: "../../public/Images/Graficas.png",
+          image: "/Images/Graficas.png",
           tags: ["Python", "UI Design", "Design Thinking", "Data Analysis"],
           items: [
             "Design thinking applied to the development of innovative, functional, and user-centered solutions",
