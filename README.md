@@ -1,129 +1,121 @@
-# 🐢 Portafolio — Camilo Andrés Pinzón
+# 🐢 Portafolio Personal — Camilo Andrés Pinzón
 
-Portafolio personal desarrollado con **React + Vite**, bilingüe (ES/EN), con animaciones, secciones dinámicas y formulario de contacto funcional.
+Portafolio web personal construido con **React + Vite + Tailwind CSS**, con soporte bilingüe (ES/EN), integración de EmailJS, WhatsApp, GitHub API en vivo y documentación técnica de proyectos reales.
 
-🔗 **GitHub:** [github.com/Camilo718](https://github.com/Camilo718)
-💼 **LinkedIn:** [Camilo Andrés Pinzón](https://www.linkedin.com/in/camilo-andres-pinzon-melendrez-27a7b3319/)
+**🔗 Demo en vivo:** [portafolio-camilo-pinzon.vercel.app](https://portafolio-camilo-pinzon-gu1pnjxom-andrees-s-projects-12d8b8ab.vercel.app/)
 
 ---
 
-## ✨ Secciones
+## 📸 Vista previa
 
-| Sección | Descripción |
+![Home del portafolio](/public/images/preview-home.png)
+
+---
+
+## ✨ Características
+
+- 🌐 **Bilingüe (ES/EN)** — sistema de traducción con Context API de React
+- 📱 **100% Responsive** — optimizado para móvil, tablet y escritorio
+- ✉️ **Formulario de contacto real** — integrado con EmailJS
+- 💬 **Contacto directo por WhatsApp** — con mensaje predefinido
+- 🐙 **Sección GitHub en vivo** — consume la API pública de GitHub para mostrar repositorios actualizados automáticamente
+- 🏅 **Credenciales verificables** — badges oficiales de IBM SkillsBuild conectados a Credly
+- 📊 **Documentación técnica** — diagramas de flujo (Lucidchart) de proyectos reales, integrados como filtro dentro de Proyectos
+- 🎬 **Animaciones al hacer scroll** — con Intersection Observer
+- 🔔 **Notificaciones (toasts)** — con Sonner
+- ⚡ **Carrusel de tecnologías** — infinito y pausable al pasar el mouse
+
+---
+
+## 🛠️ Stack Tecnológico
+
+| Categoría | Tecnología |
 |---|---|
-| **Home** | Presentación con efecto de escritura animado y estadísticas |
-| **Lo que hago** | Habilidades en Frontend y Diseño & Datos |
-| **Educación** | Formación académica y técnica |
-| **Credenciales** | 7 badges certificados por IBM SkillsBuild (Credly) |
-| **Experiencia** | Historial laboral y prácticas profesionales |
-| **Proyectos** | Proyectos con filtros por tecnología |
-| **Diagramas** | Análisis de procesos y diagramas de flujo (Lucidchart) |
-| **GitHub** | Perfil y repositorios públicos en tiempo real |
-| **Contacto** | Formulario por Email y acceso directo a WhatsApp |
+| Framework | React 18 |
+| Build tool | Vite |
+| Estilos | Tailwind CSS v4 |
+| Íconos | Lucide React, React Icons |
+| Notificaciones | Sonner |
+| Envío de emails | EmailJS |
+| Deploy | Vercel |
 
 ---
 
-## 🛠️ Stack tecnológico
-
-- **React 19** + **Vite 8**
-- **Tailwind CSS 4**
-- **Framer Motion** — animaciones
-- **EmailJS** — envío de correos desde el formulario
-- **Lucide React** + **React Icons** — iconografía
-- **React Scroll** — navegación suave entre secciones
-- **Sonner** — notificaciones toast
-
----
-
-## 🚀 Instalación y uso
-
-```bash
-# Clonar el repositorio
-git clone https://github.com/Camilo718/<repo-name>.git
-cd portfolio
-
-# Instalar dependencias
-npm install
-
-# Iniciar servidor de desarrollo
-npm run dev
-
-# Build para producción
-npm run build
-
-# Vista previa del build
-npm run preview
-```
-
----
-
-## 📁 Estructura del proyecto
+## 📂 Estructura del proyecto
 
 ```
 portfolio/
 ├── public/
-│   ├── docs/payroll-Diagrams/   # PDFs de diagramas de flujo
-│   ├── Images/                  # Imágenes y capturas
-│   └── Camilo_Pinzon_CV_2026.pdf
+│   ├── images/              # Ilustraciones, badges IBM, diagramas
+│   ├── docs/                # PDFs de documentación técnica
+│   └── cv.pdf               # CV descargable
 ├── src/
-│   ├── components/              # Componentes reutilizables
-│   │   ├── AnimatedCounter.jsx
-│   │   ├── FadeIn.jsx
-│   │   ├── Navbar.jsx
-│   │   ├── ScrollProgress.jsx
-│   │   ├── SectionTitle.jsx
-│   │   ├── TechCarousel.jsx
-│   │   └── TypingEffect.jsx
-│   ├── context/
-│   │   └── LanguageContext.jsx  # Contexto de idioma ES/EN
-│   ├── data/
-│   │   ├── i18n.js              # Traducciones y datos de contenido
-│   │   └── portfolioData.js     # Datos personales, redes y credenciales
-│   ├── sections/                # Secciones principales del portafolio
-│   ├── styles/global.css
-│   ├── App.jsx
-│   └── main.jsx
+│   ├── components/          # Navbar, FadeIn, TypingEffect, etc.
+│   ├── sections/            # Home, Education, Experience, Projects...
+│   ├── context/             # LanguageContext (ES/EN)
+│   ├── data/                # i18n.js y portfolioData.js
+│   └── styles/              # global.css (Tailwind + variables de tema)
 ├── index.html
-├── vite.config.js
-└── package.json
+├── package.json
+└── vite.config.js
 ```
 
 ---
 
-## 🌐 Internacionalización (i18n)
+## 🚀 Cómo correrlo localmente
 
-El portafolio soporta **español e inglés**. El idioma se gestiona con un contexto de React (`LanguageContext`) y todas las cadenas de texto están centralizadas en `src/data/i18n.js`.
+```bash
+# Clonar el repositorio
+git clone https://github.com/Camilo718/tu-repo.git
+cd tu-repo
+
+# Instalar dependencias
+npm install
+
+# Correr en modo desarrollo
+npm run dev
+
+# Generar build de producción
+npm run build
+```
 
 ---
 
-## 📌 Proyectos destacados
+## ⚙️ Variables / configuración
 
-| Proyecto | Tecnologías | Demo |
-|---|---|---|
-| Tickets Dashboard | React, Vite, Tailwind, TypeScript, Python, MariaDB | [Ver](https://uncle-doll-fleet-greetings.trycloudflare.com) |
-| Periódico Digital | React, TypeScript, CSS, Python | [GitHub](https://github.com/Camilo718/proyecto-SN-52-Final) |
-| Payroll (UX/UI) | Design Thinking, UI, UX | [Ver](https://bracelets-adapter-mental-uncertainty.trycloudflare.com/login) |
-| Agent Scheduler | React, Python, MariaDB, Tailwind | [GitHub](https://github.com/Camilo718/Pipkins_Validator) |
-| Gestión de Inventario | React, JavaScript, Python, MariaDB | [GitHub](https://github.com/Jxfferson/system_of_managment_assets) |
+El formulario de contacto usa EmailJS. Si vas a clonar este proyecto, reemplaza estos valores en `src/sections/ContactSection.jsx`:
+
+```js
+const SERVICE_ID  = "tu_service_id";
+const TEMPLATE_ID = "tu_template_id";
+const PUBLIC_KEY  = "tu_public_key";
+```
+
+Y el número de WhatsApp:
+
+```js
+const WA_NUMBER = "57XXXXXXXXXX";
+```
 
 ---
 
-## 📜 Credenciales IBM SkillsBuild
+## 🎓 Sobre las credenciales
 
-- AI Literacy *(Jun 2026)*
-- Data Fundamentals *(May 2026)*
-- Agile Explorer *(Mar 2026)*
-- Artificial Intelligence Fundamentals *(Feb 2025)*
-- Working in a Digital World: Professional Skills *(Jun 2024)*
-- Explorations into Mindfulness *(Abr 2024)*
-- Basic Principles of Design *(Nov 2022)*
+Las 7 credenciales digitales mostradas están certificadas por **IBM SkillsBuild** y son verificables públicamente en [Credly](https://www.credly.com/).
 
-Verificables en [Credly](https://www.credly.com/).
+## 📊 Sobre la documentación técnica
+
+Los diagramas de flujo incluidos documentan el análisis funcional de un sistema de nómina (Payroll) por roles, realizado durante mi etapa productiva del SENA, usando **Lucidchart**.
 
 ---
 
 ## 📬 Contacto
 
-- 📧 camiloandrespinzonmelendrez@gmail.com
-- 💬 [WhatsApp](https://wa.me/573158094952)
-- 💼 [LinkedIn](https://www.linkedin.com/in/camilo-andres-pinzon-melendrez-27a7b3319/)
+- **Portafolio:** [Ver sitio](https://portafolio-camilo-pinzon-gu1pnjxom-andrees-s-projects-12d8b8ab.vercel.app/)
+- **GitHub:** [@Camilo718](https://github.com/Camilo718)
+- **LinkedIn:** [Camilo Pinzón](https://www.linkedin.com/in/camilo-andres-pinzon-melendrez-27a7b3319/)
+- **Email:** camiloandrespinzonmelendrez@gmail.com
+
+---
+
+<p align="center">Hecho con 🐢 y mucho amor por Camilo Pinzón</p>
