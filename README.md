@@ -8,7 +8,7 @@ Portafolio web personal construido con **React + Vite + Tailwind CSS**, con sopo
 
 ## 📸 Vista previa
 
-![Home del portafolio](/public/images/preview-home.png)
+![Home del portafolio](/public/Images/preview-home.png)
 
 ---
 
