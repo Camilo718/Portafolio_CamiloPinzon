@@ -9,7 +9,7 @@ import { HiOutlineBriefcase } from "react-icons/hi";
 export const PERSONAL = {
   name:     "Camilo Andrés Pinzón",
   alias:    "camilo_dev",
-  cvFile:   "/public/Camilo_Pinzon_CV_2026.docx.pdf",
+  cvFile:   "../../public/CamiloAndres_Pinzon_CV.pdf",
 };
 
 export const SOCIALS = [

@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import {
   SiJavascript, SiTypescript, SiPython, SiHtml5,
   SiReact, SiNodedotjs, SiBootstrap, SiNpm,
+  SiDotnet, SiDocker, SiFirebase, SiN8N,
   SiMysql, SiMongodb, SiGit, SiGithub, SiJira,
   SiFigma, SiDiscord, SiCss
 } from "react-icons/si";
@@ -17,6 +18,7 @@ const TECHS = [
   // Frameworks
   { icon: SiReact,      name: "React",       color: "#61DAFB", bg: "#ECFEFF" },
   { icon: SiNodedotjs,  name: "Node.js",     color: "#339933", bg: "#F0FDF4" },
+  { icon: SiDotnet,     name: ".NET",        color: "#512BD4", bg: "#F5F3FF" },
   { icon: SiBootstrap,  name: "Bootstrap",   color: "#7952B3", bg: "#FAF5FF" },
   { icon: SiNpm,        name: "npm",         color: "#CB3837", bg: "#FEF2F2" },
   // Databases
@@ -26,6 +28,9 @@ const TECHS = [
   { icon: SiGit,        name: "Git",         color: "#F05032", bg: "#FEF2F2" },
   { icon: SiGithub,     name: "GitHub",      color: "#181717", bg: "#F8FAFC" },
   { icon: SiJira,       name: "Jira",        color: "#0052CC", bg: "#EFF6FF" },
+  { icon: SiDocker,     name: "Docker",      color: "#2496ED", bg: "#EFF6FF" },
+  { icon: SiFirebase,   name: "Firebase",    color: "#FFCA28", bg: "#FFFBEB" },
+  { icon: SiN8N,        name: "n8n",         color: "#EA4B71", bg: "#FFF1F2" },
   { icon: FaMicrosoft,  name: "VS Code", color: "#007ACC", bg: "#EFF6FF" },
   { icon: SiFigma,      name: "Figma",       color: "#f2251e", bg: "#FEF2F2" },
   { icon: SiDiscord,    name: "Discord",     color: "#5865F2", bg: "#EEF2FF" },

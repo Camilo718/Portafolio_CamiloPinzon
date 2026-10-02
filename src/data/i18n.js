@@ -1,4 +1,7 @@
-import { SiReact, SiFigma, SiPython, SiVite, SiGrafana } from "react-icons/si";
+import {
+  SiReact, SiFigma, SiPython, SiVite, SiGrafana,
+  SiDotnet, SiDocker, SiFirebase, SiN8N, SiBootstrap,
+} from "react-icons/si";
 import Develop from "../../public/Images/Develop.png";
 import Graficas from "../../public/Images/Graficas.png";
 import { FiPackage, FiShoppingCart } from "react-icons/fi";
@@ -26,6 +29,11 @@ export const TECH_ICON_MAP = {
   MariaDB:    { Icon: Database,  color: "#003545" },
   CSS:        { Icon: Palette,   color: "#563D7C" },
   Grafana:    { Icon: Activity,  color: "#F46800" },
+  ".NET":     { Icon: SiDotnet,      color: "#512BD4" },
+  Docker:     { Icon: SiDocker,      color: "#2496ED" },
+  Firebase:   { Icon: SiFirebase,    color: "#FFCA28" },
+  N8N:        { Icon: SiN8N,         color: "#EA4B71" },
+  Bootstrap:  { Icon: SiBootstrap,   color: "#7952B3" },
 };
 export const translations = {
   es: {
@@ -80,11 +88,14 @@ export const translations = {
     education: {
       title: "Educación",
       items: [
-        { badge: "Técnico", title: "Técnico en Programación de Software", institution: "SENA", year: "En curso" },
+        { badge: "Técnico", title: "Técnico en Programación de Software", institution: "SENA", year: "Graduano" },
+        { badge: "Técnologo", title: "Tecnologo en Analisis y Desarrollo de Software", institution: "SENA", year: "Graduano" },
         { badge: "Formación", title: "Formación P-Tech", institution: "IBM – SkillsBuild", year: "Completado" },
         { badge: "Bachiller", title: "Bachiller Académico", institution: "Colegio Gerardo Paredes", year: "Graduado" },
         { badge: "Habilidad", title: "Design Thinking & Mindfulness", institution: "Autodidacta", year: "Continuo" },
       ],
+      diplomasLabel: "Ver diploma",
+      diplomaModalNote: "Documento de solo lectura",
     },
     credentials: {
       title: "Credenciales Digitales",
@@ -241,11 +252,14 @@ export const translations = {
     education: {
       title: "Education",
       items: [
-        { badge: "Technical", title: "Software Programming Technician", institution: "SENA", year: "In progress" },
+        { badge: "Associate Degree", title: "Technologist in Software Analysis and Development", institution: "SENA", year: "Graduated" },
+        { badge: "Technical", title: "Software Programming Technician", institution: "SENA", year: "Graduated" },
         { badge: "Training", title: "P-Tech Training", institution: "IBM – SkillsBuild", year: "Completed" },
         { badge: "High School", title: "Academic High School Diploma", institution: "Colegio Gerardo Paredes", year: "Graduated" },
         { badge: "Skill", title: "Design Thinking & Mindfulness", institution: "Self-taught", year: "Ongoing" },
       ],
+      diplomasLabel: "View diploma",
+      diplomaModalNote: "Read-only document",
     },
     credentials: {
       title: "Digital Credentials",

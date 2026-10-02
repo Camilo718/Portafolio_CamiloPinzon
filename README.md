@@ -6,13 +6,13 @@ Portafolio web personal construido con **React + Vite + Tailwind CSS**, con sopo
 
 ---
 
-## 📸 Vista previa
+## Vista previa
 
 ![Home del portafolio](/public/Images/preview-home.png)
 
 ---
 
-## ✨ Características
+## Características
 
 - 🌐 **Bilingüe (ES/EN)** — sistema de traducción con Context API de React
 - 📱 **100% Responsive** — optimizado para móvil, tablet y escritorio
